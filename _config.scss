@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin title {
+    font-weight: map-get($font-weight, "L");
+    font-size: map-get($font-size, "L");
+}
+
+@mixin subtitle {
+    font-weight: map-get($font-weight, "M");
+    font-size: map-get($font-size, "M");
+}
+
+@mixin body {
+    font-weight: map-get($font-weight, "S");
+    font-size: map-get($font-size, "S");
+}
+
+@mixin transition($duration: 0.5s) {
+    transition: all $duration ease-in-out;
+}
+
+@mixin link {
+    color: $color-2;
+    text-decoration: none;
+    @include transition;
+
+    &:hover {
+        color: $color-3;
+    }
+}
