@@ -2,12 +2,18 @@
 @import "config";
 
 body {
+    min-width: 910px;
+    overflow-x: scroll;
     display: grid;
     grid-template-columns: 15vw auto;
     grid-template-rows: 100vh;
     color: $color-3;
     background: $color-1;
     @include body;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 header {
@@ -41,11 +47,10 @@ main {
     grid-area: 1 / 2 / span 1 / span 1;
     height: 100%;
     overflow-y: scroll;
-    background: $color-3;
 
     &::-webkit-scrollbar {
         width: 8px;
-        background: rgba($color-1, 0.3);
+        background: rgba($color-3, 0.5);
     }
 
     &::-webkit-scrollbar-thumb {
@@ -110,6 +115,38 @@ main {
     }
 }
 
-@media screen and (max-width: 1335px) {
-    
+@media screen and (max-width: 1950px) {
+    body {
+        grid-template-columns: auto;
+        grid-template-rows: 5vh 95vh;
+    }
+
+    header {
+        grid-area: 1 / 1 / span 1 / span 1;
+        flex-flow: row;
+        align-items: center;
+
+        .menu-nav {
+            flex-flow: row;
+
+            a {
+                margin: 0 20px;
+            }
+        }
+
+        p {
+            width: 100%;
+            position: fixed;
+            bottom: 5px;
+            color: $color-1;
+        }
+    }
+
+    main {
+        grid-area: 2 / 1 / span 1 / span 1;
+
+        section {
+            min-height: 95vh;
+        }
+    }
 }

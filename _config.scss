@@ -24,12 +24,12 @@
 }
 
 @mixin link {
-    color: $color-2;
+    color: $color-3;
     text-decoration: none;
     @include transition;
 
     &:hover {
-        color: $color-3;
+        color: $color-2;
     }
 }
 

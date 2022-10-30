@@ -5,6 +5,8 @@
 }
 
 body {
+  min-width: 910px;
+  overflow-x: scroll;
   display: grid;
   grid-template-columns: 15vw auto;
   grid-template-rows: 100vh;
@@ -12,6 +14,9 @@ body {
   background: #3d405b;
   font-weight: 400;
   font-size: 1.25rem;
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 
 header {
@@ -30,12 +35,12 @@ header .menu-nav {
 }
 header .menu-nav a {
   margin: 20px 10px;
-  color: #f2cc8f;
+  color: #f4f1de;
   text-decoration: none;
   transition: all 0.5s ease-in-out;
 }
 header .menu-nav a:hover {
-  color: #f4f1de;
+  color: #f2cc8f;
 }
 header p {
   display: flex;
@@ -47,11 +52,10 @@ main {
   grid-area: 1/2/span 1/span 1;
   height: 100%;
   overflow-y: scroll;
-  background: #f4f1de;
 }
 main::-webkit-scrollbar {
   width: 8px;
-  background: rgba(61, 64, 91, 0.3);
+  background: rgba(244, 241, 222, 0.5);
 }
 main::-webkit-scrollbar-thumb {
   border-radius: 20px;
@@ -125,4 +129,34 @@ main #tipCal #receipt form .num-of-people button {
   cursor: pointer;
   font-weight: 600;
   font-size: 1.5rem;
+}
+
+@media screen and (max-width: 1950px) {
+  body {
+    grid-template-columns: auto;
+    grid-template-rows: 5vh 95vh;
+  }
+  header {
+    grid-area: 1/1/span 1/span 1;
+    flex-flow: row;
+    align-items: center;
+  }
+  header .menu-nav {
+    flex-flow: row;
+  }
+  header .menu-nav a {
+    margin: 0 20px;
+  }
+  header p {
+    width: 100%;
+    position: fixed;
+    bottom: 5px;
+    color: #3d405b;
+  }
+  main {
+    grid-area: 2/1/span 1/span 1;
+  }
+  main section {
+    min-height: 95vh;
+  }
 }/*# sourceMappingURL=style.css.map */
