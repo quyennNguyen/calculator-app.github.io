@@ -19,13 +19,14 @@
             <a href="#units">UNITS</a>
             <a href="#roman-num">ROMAN NUMBERS</a>
             <a href="#temperature">TEMPERATURE</a>
-            <a href="#tip">TIP</a>
+            <a href="#tipCal">TIP</a>
         </nav>
+        <p>&lt;&lt;&lt; &copy; 2022 Quyen Nguyen &gt;&gt;&gt;</p>
     </header>
 
     <main id="calculator-list">
         <section class="calculator-type" id="algebra">
-            
+
         </section>
 
         <section class="calculator-type" id="bases">
@@ -44,25 +45,62 @@
 
         </section>
 
-        <section class="calculator-type" id="tip">
+        <section class="calculator-type" id="tipCal">
             <div id="receipt">
-                <div>RECEIPT</div>
-                <div id="receipt-icon"></div>
-                <div>Subtotal</div>
-                <div>Sale Tax</div>
-                <div>Gratuity</div>
-                <div>Total Due</div>
-                <div>People</div>
-                <div>Total per Person</div>
-                <div>THANK YOU</div>
-                <i class="fa-solid fa-barcode"></i>
+                <h3>********************************</h3>
+                <h3>RECEIPT</h3>
+                <h3>********************************</h3>
+                <form action="">
+                    <label for="total-input">Subtotal</label>
+                    <br>
+                    <i class="fa-solid fa-dollar-sign"></i>
+                    <input id="total-input" type="text" placeholder="0.00" onkeyup="calculateBill()">
+                </form>
+                <form action="">
+                    <label for="tax-input">Sale Tax</label>
+                    <br>
+                    <i class="fa-solid fa-percent"></i>
+                    <input id="tax-input" type="text" placeholder="0" onkeyup="calculateBill()">
+                </form>
+                <div>
+                    <span>Total</span>
+                    <span id="total1-output">$0.00</span>
+                </div>
+                <form action="">
+                    <label for="tip-input">Gratuity</label>
+                    <br>
+                    <i class="fa-solid fa-percent"></i>
+                    <input id="tip-input" type="text" placeholder="0" onkeyup="calculateBill()">
+                </form>
+                <div>
+                    <span>Total Due</span>
+                    <span id="total2-output">$0.00</span>
+                </div>
+                <form action="">
+                    <label>People</label>
+                    <span class="num-of-people">
+                        <button onclick="increasePeople()">+</button>
+                        <span id="people-input">1</span>
+                        <button onclick="decreasePeople()">-</button>
+                    </span>
+                </form>
+                <div>
+                    <span>Total per Person</span>
+                    <span id="total3-output">$0.00</span>
+                </div>
+                <h3>THANK YOU</h3>
+                <h3>
+                    <i class="fa-solid fa-barcode fa-2x"></i>
+                    <i class="fa-solid fa-barcode fa-2x"></i>
+                    <i class="fa-solid fa-barcode fa-2x"></i>
+                </h3>
             </div>
         </section>
     </main>
 
-    <footer>
+    <!-- <footer>
         <p>&lt;&lt;&lt; &copy; 2022 Quyen Nguyen &gt;&gt;&gt;</p>
-    </footer>
+    </footer> -->
 
     <script src="https://kit.fontawesome.com/d83c12719b.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>

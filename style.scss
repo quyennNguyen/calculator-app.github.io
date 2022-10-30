@@ -3,35 +3,43 @@
 
 body {
     display: grid;
-    grid-template-columns: 15vw 85vw;
-    grid-template-rows: 95vh 5vh;
+    grid-template-columns: 15vw auto;
+    grid-template-rows: 100vh;
     color: $color-3;
+    background: $color-1;
+    @include body;
 }
 
 header {
     grid-area: 1 / 1 / span 1 / span 1;
-    background: $color-1;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
 
     .title {
         @include title;
     }
 
     .menu-nav {
-        height: 90%;
         display: flex;
         flex-flow: column;
-        justify-content: center;
-        
+
         a {
             margin: 20px 10px;
             @include link;
         }
     }
+
+    p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 main {
-    grid-area: 1 / 2 / span 2 / span 1;
-    max-height: 100vh;
+    grid-area: 1 / 2 / span 1 / span 1;
+    height: 100%;
     overflow-y: scroll;
     background: $color-3;
 
@@ -47,37 +55,61 @@ main {
 
     section {
         width: 100%;
-        height: 100vh;
+        min-height: 100vh;
+        max-height: fit-content;
     }
 
-    #tip {
+    #tipCal {
         display: flex;
         justify-content: center;
         align-items: center;
 
         #receipt {
-            margin: auto;
+            margin: 20px;
             border-radius: 20px;
-            padding: 30px 10px;
             width: 50%;
             background: $color-1;
 
-            div {
-                margin: 30px;
-                width: 100%;
+            h3 {
+                margin: 30px auto;
+                width: fit-content;
             }
 
-            div:nth-child(1) {
-                background: red;
+            div {
+                margin: 30px;
+                width: 90%;
+                display: flex;
+                flex-flow: column;
+                align-items: flex-end;
+
+                #total1-output,
+                #total2-output,
+                #total3-output {
+                    font-size: 2.5rem;
+                }
+            }
+
+            form {
+                margin: 30px;
+                width: fit-content;
+
+                input {
+                    @include input;
+                }
+
+                .num-of-people {
+                    margin: 0 10px;
+                    font-size: 1.75rem;
+
+                    button {
+                        @include button;
+                    }
+                }
             }
         }
     }
 }
 
-footer {
-    grid-area: 2 / 1 / span 1 / span 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: $color-1;
+@media screen and (max-width: 1335px) {
+    
 }
