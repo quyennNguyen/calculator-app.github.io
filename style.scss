@@ -2,11 +2,11 @@
 @import "config";
 
 body {
-    min-width: 910px;
+    min-width: 800px;
     overflow-x: scroll;
     display: grid;
     grid-template-columns: 15vw auto;
-    grid-template-rows: 100vh;
+    grid-template-rows: 95vh 5vh;
     color: $color-3;
     background: $color-1;
     @include body;
@@ -18,33 +18,26 @@ body {
 
 header {
     grid-area: 1 / 1 / span 1 / span 1;
-    display: flex;
-    flex-flow: column;
-    justify-content: space-between;
 
     .title {
         @include title;
     }
 
     .menu-nav {
+        height: 90%;
         display: flex;
         flex-flow: column;
+        justify-content: center;
 
         a {
             margin: 20px 10px;
             @include link;
         }
     }
-
-    p {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
 }
 
 main {
-    grid-area: 1 / 2 / span 1 / span 1;
+    grid-area: 1 / 2 / span 2 / span 1;
     height: 100%;
     overflow-y: scroll;
 
@@ -115,30 +108,32 @@ main {
     }
 }
 
+footer {
+    grid-area: 2 / 1 / span 1 / span 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media screen and (max-width: 1950px) {
     body {
         grid-template-columns: auto;
-        grid-template-rows: 5vh 95vh;
+        grid-template-rows: 5vh 90vh 5vh;
     }
 
     header {
         grid-area: 1 / 1 / span 1 / span 1;
-        flex-flow: row;
+        display: flex;
+        justify-content: space-between;
         align-items: center;
 
         .menu-nav {
             flex-flow: row;
+            align-items: center;
 
             a {
                 margin: 0 20px;
             }
-        }
-
-        p {
-            width: 100%;
-            position: fixed;
-            bottom: 5px;
-            color: $color-1;
         }
     }
 
@@ -146,7 +141,12 @@ main {
         grid-area: 2 / 1 / span 1 / span 1;
 
         section {
-            min-height: 95vh;
+            min-height: 90vh;
+            max-height: fit-content;
         }
+    }
+
+    footer {
+        grid-area: 3 / 1 / span 1 / span 1;
     }
 }
