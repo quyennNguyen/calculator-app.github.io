@@ -7,8 +7,8 @@ body {
     display: grid;
     grid-template-columns: 15vw auto;
     grid-template-rows: 95vh 5vh;
-    color: $color-3;
-    background: $color-1;
+    color: $color-1;
+    background: $color-3;
     @include body;
 
     &::-webkit-scrollbar {
@@ -18,8 +18,11 @@ body {
 
 header {
     grid-area: 1 / 1 / span 1 / span 1;
+    color: $color-3;
+    background: $color-1;
 
     .title {
+        margin: 20px;
         @include title;
     }
 
@@ -30,7 +33,7 @@ header {
         justify-content: center;
 
         a {
-            margin: 20px 10px;
+            margin: 20px;
             @include link;
         }
     }
@@ -66,6 +69,7 @@ main {
             margin: 20px;
             border-radius: 20px;
             width: 50%;
+            color: $color-3;
             background: $color-1;
 
             h3 {
@@ -113,6 +117,8 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: $color-3;
+    background: $color-1;
 }
 
 @media screen and (max-width: 1950px) {
@@ -130,10 +136,6 @@ footer {
         .menu-nav {
             flex-flow: row;
             align-items: center;
-
-            a {
-                margin: 0 20px;
-            }
         }
     }
 
@@ -148,5 +150,7 @@ footer {
 
     footer {
         grid-area: 3 / 1 / span 1 / span 1;
+        color: $color-1;
+        background: $color-3;
     }
 }
