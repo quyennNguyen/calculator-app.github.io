@@ -116,12 +116,12 @@ main #tip-cal #receipt form .num-of-people {
   margin: 0 10px;
   font-size: 1.75rem;
 }
-main #tip-cal #receipt form .num-of-people button {
+main #tip-cal #receipt form .num-of-people #increment-btn,
+main #tip-cal #receipt form .num-of-people #decrement-btn {
   margin: 10px;
   border: solid #f4f1de;
   border-radius: 50%;
-  width: 3rem;
-  height: 3rem;
+  padding: 15px 20px;
   color: #3d405b;
   background: rgba(244, 241, 222, 0.5);
   cursor: pointer;

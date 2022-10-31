@@ -103,7 +103,8 @@ main {
                     margin: 0 10px;
                     font-size: 1.75rem;
 
-                    button {
+                    #increment-btn,
+                    #decrement-btn {
                         @include button;
                     }
                 }
