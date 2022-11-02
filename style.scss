@@ -7,8 +7,8 @@ body {
     display: grid;
     grid-template-columns: 15vw auto;
     grid-template-rows: 95vh 5vh;
-    color: $color-1;
-    background: $color-3;
+    color: $color-3;
+    background: $color-1;
     @include body;
 
     &::-webkit-scrollbar {
@@ -18,8 +18,8 @@ body {
 
 header {
     grid-area: 1 / 1 / span 1 / span 1;
-    color: $color-3;
-    background: $color-1;
+    color: $color-1;
+    background: $color-3;
 
     .title {
         margin: 20px;
@@ -58,20 +58,21 @@ main {
         width: 100%;
         min-height: 100vh;
         max-height: fit-content;
-    }
-
-    #tip-cal {
         display: flex;
         justify-content: center;
         align-items: center;
 
-        #receipt {
+        div:first-child {
             margin: 20px;
             border-radius: 20px;
             width: 50%;
-            color: $color-3;
-            background: $color-1;
+            color: $color-1;
+            background: $color-2;
+        }
+    }
 
+    #tip-cal {
+        #receipt {
             h3 {
                 margin: 30px auto;
                 width: fit-content;
@@ -118,8 +119,8 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: $color-3;
-    background: $color-1;
+    color: $color-1;
+    background: $color-3;
 }
 
 @media screen and (max-width: 1950px) {
@@ -151,7 +152,7 @@ footer {
 
     footer {
         grid-area: 3 / 1 / span 1 / span 1;
-        color: $color-1;
-        background: $color-3;
+        color: $color-3;
+        background: $color-1;
     }
 }

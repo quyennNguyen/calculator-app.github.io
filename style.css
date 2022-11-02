@@ -10,8 +10,8 @@ body {
   display: grid;
   grid-template-columns: 15vw auto;
   grid-template-rows: 95vh 5vh;
-  color: #3d405b;
-  background: #f4f1de;
+  color: #f4f1de;
+  background: #3d405b;
   font-weight: 400;
   font-size: 1.25rem;
 }
@@ -21,8 +21,8 @@ body::-webkit-scrollbar {
 
 header {
   grid-area: 1/1/span 1/span 1;
-  color: #f4f1de;
-  background: #3d405b;
+  color: #3d405b;
+  background: #f4f1de;
 }
 header .title {
   margin: 20px;
@@ -37,7 +37,7 @@ header .menu-nav {
 }
 header .menu-nav a {
   margin: 20px;
-  color: #f4f1de;
+  color: #3d405b;
   text-decoration: none;
   transition: all 0.5s ease-in-out;
 }
@@ -64,18 +64,16 @@ main section {
   max-height: -webkit-fit-content;
   max-height: -moz-fit-content;
   max-height: fit-content;
-}
-main #tip-cal {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-main #tip-cal #receipt {
+main section div:first-child {
   margin: 20px;
   border-radius: 20px;
   width: 50%;
-  color: #f4f1de;
-  background: #3d405b;
+  color: #3d405b;
+  background: #f2cc8f;
 }
 main #tip-cal #receipt h3 {
   margin: 30px auto;
@@ -134,8 +132,8 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #f4f1de;
-  background: #3d405b;
+  color: #3d405b;
+  background: #f4f1de;
 }
 
 @media screen and (max-width: 1950px) {
@@ -164,7 +162,7 @@ footer {
   }
   footer {
     grid-area: 3/1/span 1/span 1;
-    color: #3d405b;
-    background: #f4f1de;
+    color: #f4f1de;
+    background: #3d405b;
   }
 }/*# sourceMappingURL=style.css.map */
