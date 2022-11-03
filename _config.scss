@@ -5,18 +5,15 @@
 }
 
 @mixin title {
-    font-weight: map-get($font-weight, "L");
-    font-size: map-get($font-size, "L");
+    font: map-get($font-weight, "L") map-get($font-size, "L") $font-family;
 }
 
 @mixin subtitle {
-    font-weight: map-get($font-weight, "M");
-    font-size: map-get($font-size, "M");
+    font: map-get($font-weight, "M") map-get($font-size, "M") $font-family;
 }
 
 @mixin body {
-    font-weight: map-get($font-weight, "S");
-    font-size: map-get($font-size, "S");
+    font: map-get($font-weight, "S") map-get($font-size, "S") $font-family;
 }
 
 @mixin transition($duration: 0.5s) {
