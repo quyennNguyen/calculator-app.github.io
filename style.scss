@@ -45,13 +45,12 @@ main {
     overflow-y: scroll;
 
     &::-webkit-scrollbar {
-        width: 8px;
-        background: rgba($color-3, 0.5);
+        width: 6px;
     }
 
     &::-webkit-scrollbar-thumb {
         border-radius: 20px;
-        background: $color-1;
+        background: $color-3;
     }
 
     section {
