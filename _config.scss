@@ -23,7 +23,6 @@
 @mixin link {
     color: $color-1;
     text-decoration: none;
-    @include transition;
 
     &:hover {
         color: $color-2;
