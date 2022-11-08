@@ -67,7 +67,7 @@ main section {
 main section > div {
   margin: 20px;
   border-radius: 20px;
-  width: 650px;
+  width: 50%;
   color: #3d405b;
   background: #f2cc8f;
 }
@@ -114,7 +114,7 @@ main #tip-cal #receipt form .num-of-people #decrement-btn {
   margin: 10px;
   border: solid #f4f1de;
   border-radius: 50%;
-  padding: 15px 20px;
+  padding: 3px 10px;
   color: #3d405b;
   background: rgba(244, 241, 222, 0.5);
   cursor: pointer;
@@ -133,7 +133,7 @@ footer {
 @media screen and (max-width: 1950px) {
   body {
     grid-template-columns: auto;
-    grid-template-rows: 5vh 90vh 5vh;
+    grid-template-rows: 8vh 87vh 5vh;
   }
   header {
     grid-area: 1/1/span 1/span 1;

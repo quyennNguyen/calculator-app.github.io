@@ -64,7 +64,7 @@ main {
         & > div {
             margin: 20px;
             border-radius: 20px;
-            width: 650px;
+            width: 50%;
             color: $color-1;
             background: $color-2;
         }
@@ -125,7 +125,7 @@ footer {
 @media screen and (max-width: 1950px) {
     body {
         grid-template-columns: auto;
-        grid-template-rows: 5vh 90vh 5vh;
+        grid-template-rows: 8vh 87vh 5vh;
     }
 
     header {
