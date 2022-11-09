@@ -2,26 +2,29 @@
 @import "config";
 
 body {
-    // min-width: 750px;
-    overflow: scroll;
-    display: grid;
-    grid-template-rows: 8vh 87vh 5vh;
+    min-width: 750px;
+    overflow-y: scroll;
+    display: flex;
+    flex-flow: column;
     color: $color-3;
     background: $color-1;
     @include body;
 
     &::-webkit-scrollbar {
-        display: none;
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 20px;
+        background: $color-3;
     }
 }
 
 header {
-    grid-area: 1 / 1 / span 1 / span 1;
+    margin: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: $color-1;
-    background: $color-3;
 
     .title {
         margin: 20px;
@@ -37,21 +40,7 @@ header {
 }
 
 main {
-    grid-area: 2 / 1 / span 1 / span 1;
-    overflow-y: scroll;
-
-    &::-webkit-scrollbar {
-        width: 6px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        border-radius: 20px;
-        background: $color-3;
-    }
-
     section {
-        min-height: 87vh;
-        max-height: fit-content;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -59,7 +48,6 @@ main {
         &>div {
             margin: 20px;
             border-radius: 20px;
-            width: fit-content;
             color: $color-1;
             background: $color-2;
         }
@@ -108,7 +96,7 @@ main {
 }
 
 footer {
-    grid-area: 3 / 1 / span 1 / span 1;
+    margin: 20px;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -5,24 +5,27 @@
 }
 
 body {
-  overflow: scroll;
-  display: grid;
-  grid-template-rows: 8vh 87vh 5vh;
+  min-width: 750px;
+  overflow-y: scroll;
+  display: flex;
+  flex-flow: column;
   color: #f4f1de;
   background: #3d405b;
   font: 400 1.25rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 body::-webkit-scrollbar {
-  display: none;
+  width: 6px;
+}
+body::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background: #f4f1de;
 }
 
 header {
-  grid-area: 1/1/span 1/span 1;
+  margin: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #3d405b;
-  background: #f4f1de;
 }
 header .title {
   margin: 20px;
@@ -30,29 +33,15 @@ header .title {
 }
 header .menu-nav a {
   margin: 20px;
-  color: #3d405b;
+  color: #f4f1de;
   text-decoration: none;
+  font: 600 1.5rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 header .menu-nav a:hover {
   color: #f2cc8f;
 }
 
-main {
-  grid-area: 2/1/span 1/span 1;
-  overflow-y: scroll;
-}
-main::-webkit-scrollbar {
-  width: 6px;
-}
-main::-webkit-scrollbar-thumb {
-  border-radius: 20px;
-  background: #f4f1de;
-}
 main section {
-  min-height: 87vh;
-  max-height: -webkit-fit-content;
-  max-height: -moz-fit-content;
-  max-height: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,9 +49,6 @@ main section {
 main section > div {
   margin: 20px;
   border-radius: 20px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
   color: #3d405b;
   background: #f2cc8f;
 }
@@ -116,7 +102,7 @@ main #tip-cal #receipt form .num-of-people {
 }
 
 footer {
-  grid-area: 3/1/span 1/span 1;
+  margin: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
