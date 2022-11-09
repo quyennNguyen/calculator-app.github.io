@@ -2,7 +2,7 @@
 @import "config";
 
 body {
-    min-width: 750px;
+    // min-width: 750px;
     overflow: scroll;
     display: grid;
     grid-template-rows: 8vh 87vh 5vh;
@@ -59,7 +59,7 @@ main {
         &>div {
             margin: 20px;
             border-radius: 20px;
-            min-width: 50%;
+            width: fit-content;
             color: $color-1;
             background: $color-2;
         }
