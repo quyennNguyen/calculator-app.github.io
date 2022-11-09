@@ -2,12 +2,12 @@
 @import "config";
 
 body {
-    min-width: 800px;
+    min-width: 750px;
     overflow-y: scroll;
     display: flex;
     flex-flow: column;
     color: $color-3;
-    background: $color-1;
+    background: rgba($color-1, 0.9);
     @include body;
 
     &::-webkit-scrollbar {
@@ -27,13 +27,13 @@ header {
     align-items: center;
 
     .title {
-        margin: 20px;
+        margin: 0 10px;
         @include title;
     }
 
     .menu-nav {
         a {
-            margin: 20px;
+            margin: 0 10px;
             @include link;
         }
     }
@@ -41,13 +41,15 @@ header {
 
 main {
     section {
+        border-radius: 20px;
         margin: 20px;
         display: flex;
         justify-content: center;
         align-items: center;
+        background: $color-1;
 
         &>div {
-            margin: 20px;
+            margin: 30px;
             border-radius: 20px;
             color: $color-1;
             background: $color-2;
@@ -59,20 +61,6 @@ main {
             h3 {
                 margin: 10px auto;
                 width: fit-content;
-            }
-
-            div {
-                margin: 10px;
-                width: 95%;
-                display: flex;
-                flex-flow: column;
-                align-items: flex-end;
-
-                #total1-output,
-                #total2-output,
-                #total3-output {
-                    font-size: 2.5rem;
-                }
             }
 
             form {
@@ -90,6 +78,33 @@ main {
                 .num-of-people {
                     margin: 0 10px;
                     font-size: 1.75rem;
+                }
+            }
+
+            div {
+                margin: 10px;
+                width: 95%;
+            }
+
+            .output {
+                display: flex;
+                flex-flow: column;
+                align-items: flex-end;
+
+                #total1-output,
+                #total2-output,
+                #total3-output {
+                    font-size: 2.5rem;
+                }
+            }
+
+            .reset-btn {
+                display: flex;
+                justify-content: center;
+                align-items: center; 
+
+                button {
+                    @include button;
                 }
             }
         }

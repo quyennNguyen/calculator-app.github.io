@@ -58,3 +58,13 @@ const decrease = () => {
     calculateBill();
   }
 };
+
+const reset = () => {
+  totalInput.value = 0;
+  taxInput.value = 0;
+  tipInput.value = 0;
+  peopleInput.innerText = 1;
+  totalOutput1.innerText = `$0.00`;
+  totalOutput2.innerText = `$0.00`;
+  totalOutput3.innerText = `$0.00`;
+};

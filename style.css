@@ -5,12 +5,12 @@
 }
 
 body {
-  min-width: 800px;
+  min-width: 750px;
   overflow-y: scroll;
   display: flex;
   flex-flow: column;
   color: #f4f1de;
-  background: #3d405b;
+  background: rgba(61, 64, 91, 0.9);
   font: 400 1.25rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 body::-webkit-scrollbar {
@@ -28,11 +28,11 @@ header {
   align-items: center;
 }
 header .title {
-  margin: 20px;
+  margin: 0 10px;
   font: 800 3rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 header .menu-nav a {
-  margin: 20px;
+  margin: 0 10px;
   color: #f4f1de;
   text-decoration: none;
   font: 600 1.5rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -42,13 +42,15 @@ header .menu-nav a:hover {
 }
 
 main section {
+  border-radius: 20px;
   margin: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #3d405b;
 }
 main section > div {
-  margin: 20px;
+  margin: 30px;
   border-radius: 20px;
   color: #3d405b;
   background: #f2cc8f;
@@ -58,18 +60,6 @@ main #tip-cal #receipt h3 {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-}
-main #tip-cal #receipt div {
-  margin: 10px;
-  width: 95%;
-  display: flex;
-  flex-flow: column;
-  align-items: flex-end;
-}
-main #tip-cal #receipt div #total1-output,
-main #tip-cal #receipt div #total2-output,
-main #tip-cal #receipt div #total3-output {
-  font-size: 2.5rem;
 }
 main #tip-cal #receipt form {
   margin: 10px;
@@ -100,6 +90,35 @@ main #tip-cal #receipt form button {
 main #tip-cal #receipt form .num-of-people {
   margin: 0 10px;
   font-size: 1.75rem;
+}
+main #tip-cal #receipt div {
+  margin: 10px;
+  width: 95%;
+}
+main #tip-cal #receipt .output {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end;
+}
+main #tip-cal #receipt .output #total1-output,
+main #tip-cal #receipt .output #total2-output,
+main #tip-cal #receipt .output #total3-output {
+  font-size: 2.5rem;
+}
+main #tip-cal #receipt .reset-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main #tip-cal #receipt .reset-btn button {
+  margin: 10px;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 15px;
+  color: #f4f1de;
+  background: #3d405b;
+  cursor: pointer;
+  font: 400 1.25rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 footer {
