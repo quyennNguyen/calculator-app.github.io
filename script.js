@@ -6,9 +6,6 @@ const tipInput = document.getElementById("tip-input");
 const peopleInput = document.getElementById("people-input");
 let numOfPeople = Number(peopleInput.innerText);
 
-const incrementBtn = document.getElementById("increment-btn");
-const decrementBtn = document.getElementById("decrement-btn");
-
 const totalOutput1 = document.getElementById("total1-output");
 const totalOutput2 = document.getElementById("total2-output");
 const totalOutput3 = document.getElementById("total3-output");
@@ -48,16 +45,16 @@ const calculateBill = () => {
   // totalOutput3.innerText = `$${total3.toLocaleString("en-US")}`;
 };
 
-incrementBtn.addEventListener("click", () => {
+const increase = () => {
   numOfPeople++;
   peopleInput.innerText = numOfPeople;
   calculateBill();
-});
+};
 
-decrementBtn.addEventListener("click", () => {
+const decrease = () => {
   if (numOfPeople > 1) {
     numOfPeople--;
     peopleInput.innerText = numOfPeople;
     calculateBill();
   }
-});
+};

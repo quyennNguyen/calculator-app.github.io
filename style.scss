@@ -29,11 +29,6 @@ header {
     }
 
     .menu-nav {
-        height: 90%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
         a {
             margin: 20px;
             @include link;
@@ -42,7 +37,7 @@ header {
 }
 
 main {
-    grid-area: 2 / 1 / span 1 / span 1; 
+    grid-area: 2 / 1 / span 1 / span 1;
     overflow-y: scroll;
 
     &::-webkit-scrollbar {
@@ -61,10 +56,10 @@ main {
         justify-content: center;
         align-items: center;
 
-        & > div {
+        &>div {
             margin: 20px;
             border-radius: 20px;
-            width: 50%;
+            min-width: 50%;
             color: $color-1;
             background: $color-2;
         }
@@ -79,7 +74,7 @@ main {
 
             div {
                 margin: 10px;
-                width: 90%;
+                width: 95%;
                 display: flex;
                 flex-flow: column;
                 align-items: flex-end;
@@ -99,14 +94,13 @@ main {
                     @include input;
                 }
 
+                button {
+                    @include button;
+                }
+
                 .num-of-people {
                     margin: 0 10px;
                     font-size: 1.75rem;
-
-                    #increment-btn,
-                    #decrement-btn {
-                        @include button;
-                    }
                 }
             }
         }
@@ -119,37 +113,3 @@ footer {
     justify-content: center;
     align-items: center;
 }
-
-// @media screen and (max-width: 1950px) {
-//     body {
-//         grid-template-columns: auto;
-//         grid-template-rows: 8vh 87vh 5vh;
-//     }
-
-//     header {
-//         grid-area: 1 / 1 / span 1 / span 1;
-//         display: flex;
-//         justify-content: space-between;
-//         align-items: center;
-
-//         .menu-nav {
-//             flex-flow: row;
-//             align-items: center;
-//         }
-//     }
-
-//     main {
-//         grid-area: 2 / 1 / span 1 / span 1;
-
-//         section {
-//             min-height: 90vh;
-//             max-height: fit-content;
-//         }
-//     }
-
-//     footer {
-//         grid-area: 3 / 1 / span 1 / span 1;
-//         color: $color-3;
-//         background: $color-1;
-//     }
-// }

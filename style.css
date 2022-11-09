@@ -29,12 +29,6 @@ header .title {
   margin: 20px;
   font: 800 3rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-header .menu-nav {
-  height: 90%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 header .menu-nav a {
   margin: 20px;
   color: #3d405b;
@@ -67,7 +61,7 @@ main section {
 main section > div {
   margin: 20px;
   border-radius: 20px;
-  width: 50%;
+  min-width: 50%;
   color: #3d405b;
   background: #f2cc8f;
 }
@@ -79,7 +73,7 @@ main #tip-cal #receipt h3 {
 }
 main #tip-cal #receipt div {
   margin: 10px;
-  width: 90%;
+  width: 95%;
   display: flex;
   flex-flow: column;
   align-items: flex-end;
@@ -97,7 +91,7 @@ main #tip-cal #receipt form {
 }
 main #tip-cal #receipt form input {
   margin: 10px;
-  border: solid #f4f1de;
+  border: none;
   border-radius: 20px;
   padding: 10px 15px;
   color: #3d405b;
@@ -105,20 +99,19 @@ main #tip-cal #receipt form input {
   outline: none;
   font: 400 1.25rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+main #tip-cal #receipt form button {
+  margin: 10px;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 15px;
+  color: #f4f1de;
+  background: #3d405b;
+  cursor: pointer;
+  font: 400 1.25rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
 main #tip-cal #receipt form .num-of-people {
   margin: 0 10px;
   font-size: 1.75rem;
-}
-main #tip-cal #receipt form .num-of-people #increment-btn,
-main #tip-cal #receipt form .num-of-people #decrement-btn {
-  margin: 10px;
-  border: solid #f4f1de;
-  border-radius: 50%;
-  padding: 3px 10px;
-  color: #3d405b;
-  background: rgba(244, 241, 222, 0.5);
-  cursor: pointer;
-  font: 600 1.5rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 footer {

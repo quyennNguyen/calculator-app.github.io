@@ -41,41 +41,44 @@
 
         <section id="tip-cal">
             <div id="receipt">
-                <h3>********************************</h3>
+                <h3>*******************</h3>
                 <h3>RECEIPT</h3>
-                <h3>********************************</h3>
-                <form action="">
+                <h3>*******************</h3>
+                <form action="" onsubmit="return false">
                     <label for="total-input">Subtotal</label>
                     <br>
                     <i class="fa-solid fa-dollar-sign"></i>
-                    <input id="total-input" type="text" placeholder="0.00" onkeyup="calculateBill()">
+                    <input id="total-input" type="text" placeholder="0.00" onsubmit="calculateBill()" required>
+                    <button type="submit" onclick="calculateBill()">Submit</button>
                 </form>
-                <form action="">
+                <form action="" onsubmit="return false">
                     <label for="tax-input">Sale Tax</label>
                     <br>
                     <i class="fa-solid fa-percent"></i>
-                    <input id="tax-input" type="text" placeholder="0" onkeyup="calculateBill()">
+                    <input id="tax-input" type="text" placeholder="0" onsubmit="calculateBill()" required>
+                    <button type="submit" onclick="calculateBill()">Submit</button>
                 </form>
                 <div>
                     <span>Total</span>
                     <span id="total1-output">$0.00</span>
                 </div>
-                <form action="">
+                <form action="" onsubmit="return false">
                     <label for="tip-input">Gratuity</label>
                     <br>
                     <i class="fa-solid fa-percent"></i>
-                    <input id="tip-input" type="text" placeholder="0" onkeyup="calculateBill()">
+                    <input id="tip-input" type="text" placeholder="0" onsubmit="calculateBill()" required>
+                    <button type="submit" onclick="calculateBill()">Submit</button>
                 </form>
                 <div>
                     <span>Total Due</span>
                     <span id="total2-output">$0.00</span>
                 </div>
-                <form action="">
+                <form action="" onsubmit="return false">
                     <label>People</label>
                     <span class="num-of-people">
-                        <span id="increment-btn"">+</span>
+                        <button type="submit" onclick="increase()">+</button>
                         <span id="people-input">1</span>
-                        <span id="decrement-btn"">-</span>
+                        <button type="submit" onclick="decrease()">-</button>
                     </span>
                 </form>
                 <div>
