@@ -8,8 +8,10 @@ body {
   min-width: 750px;
   overflow: scroll;
   display: grid;
-  grid-template-columns: 100vw;
+  grid-template-columns: 95vw;
   grid-template-rows: 10vh 85vh 5vh;
+  justify-content: center;
+  align-content: center;
   color: #f4f1de;
   background: rgba(61, 64, 91, 0.9);
   font: 400 1.25rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -32,7 +34,7 @@ header .menu-nav a {
   margin: 0 10px;
   color: #f4f1de;
   text-decoration: none;
-  font: 600 1.5rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font: 400 1.25rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 header .menu-nav a:hover {
   color: #f2cc8f;
