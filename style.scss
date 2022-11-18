@@ -3,25 +3,20 @@
 
 body {
     min-width: 750px;
-    overflow-y: scroll;
-    display: flex;
-    flex-flow: column;
+    overflow: scroll;
+    display: grid;
+    grid-template-rows: 10vh 85vh 5vh;
     color: $color-3;
     background: rgba($color-1, 0.9);
     @include body;
 
     &::-webkit-scrollbar {
-        width: 6px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        border-radius: 20px;
-        background: $color-3;
+        display: none;
     }
 }
 
 header {
-    margin: 20px;
+    grid-area: 1 / 1 / span 1 / span 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,6 +35,18 @@ header {
 }
 
 main {
+    grid-area: 2 / 1 / span 1 / span 1;
+    overflow: scroll;
+
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 20px;
+        background: $color-3;
+    }
+
     section {
         border-radius: 20px;
         margin: 20px;
@@ -49,7 +56,7 @@ main {
         background: $color-1;
 
         &>div {
-            margin: 30px;
+            margin: 20px;
             border-radius: 20px;
             color: $color-1;
             background: $color-2;
@@ -57,14 +64,14 @@ main {
     }
 
     #tip-cal {
-        #receipt {
+        div {
             h3 {
                 margin: 10px auto;
                 width: fit-content;
             }
 
             form {
-                margin: 10px;
+                margin: 10px 20px;
                 width: fit-content;
 
                 input {
@@ -81,12 +88,9 @@ main {
                 }
             }
 
-            div {
+            .output {
                 margin: 10px;
                 width: 95%;
-            }
-
-            .output {
                 display: flex;
                 flex-flow: column;
                 align-items: flex-end;
@@ -112,7 +116,7 @@ main {
 }
 
 footer {
-    margin: 20px;
+    grid-area: 3 / 1 / span 1 / span 1;
     display: flex;
     justify-content: center;
     align-items: center;
