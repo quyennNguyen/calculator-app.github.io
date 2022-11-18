@@ -5,7 +5,7 @@
 }
 
 body {
-  min-width: 750px;
+  min-width: 700px;
   overflow: scroll;
   display: grid;
   grid-template-columns: 95vw;
