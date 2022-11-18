@@ -5,7 +5,7 @@
 }
 
 body {
-  min-width: 700px;
+  min-width: 600px;
   overflow: scroll;
   display: grid;
   grid-template-columns: 95vw;
@@ -145,5 +145,6 @@ footer {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
+    background: rgba(61, 64, 91, 0.9);
   }
 }/*# sourceMappingURL=style.css.map */

@@ -2,7 +2,7 @@
 @import "config";
 
 body {
-    min-width: 700px;
+    min-width: 600px;
     overflow: scroll;
     display: grid;
     grid-template-columns: 95vw;
@@ -135,5 +135,6 @@ footer {
         position: -webkit-sticky;
         position: sticky;
         top: 0;
+        background: rgba($color-1, 0.9);
     }
 }
