@@ -6,7 +6,7 @@ body {
     overflow: scroll;
     display: grid;
     grid-template-columns: 95vw;
-    grid-template-rows: 10vh 85vh 5vh;
+    grid-template-rows: 10vh 80vh 5vh;
     justify-content: center;
     align-content: center;
     color: $color-3;
@@ -123,4 +123,15 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media screen and (max-width: 800px) {
+    body {
+        display: block;
+    }
+
+    header {
+        height: 10vh;
+        position: sticky;
+    }
 }
