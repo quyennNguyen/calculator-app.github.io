@@ -5,6 +5,7 @@ body {
     min-width: 750px;
     overflow: scroll;
     display: grid;
+    grid-template-columns: 100vw;
     grid-template-rows: 10vh 85vh 5vh;
     color: $color-3;
     background: rgba($color-1, 0.9);

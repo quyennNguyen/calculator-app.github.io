@@ -8,6 +8,7 @@ body {
   min-width: 750px;
   overflow: scroll;
   display: grid;
+  grid-template-columns: 100vw;
   grid-template-rows: 10vh 85vh 5vh;
   color: #f4f1de;
   background: rgba(61, 64, 91, 0.9);
