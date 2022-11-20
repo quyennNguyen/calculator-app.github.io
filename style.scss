@@ -6,7 +6,7 @@ body {
     overflow: scroll;
     display: grid;
     grid-template-columns: 95vw;
-    grid-template-rows: 10vh 80vh 5vh;
+    grid-template-rows: 10vh 80vh 10vh;
     justify-content: center;
     align-content: center;
     color: $color-3;
@@ -130,11 +130,11 @@ footer {
         display: block;
     }
 
-    header {
-        height: 10vh;
-        position: -webkit-sticky;
-        position: sticky;
-        top: 0;
-        background: rgba($color-1, 0.9);
-    }
+    // header {
+    //     height: 10vh;
+    //     position: -webkit-sticky;
+    //     position: sticky;
+    //     top: 0;
+    //     background: rgba($color-1, 0.9);
+    // }
 }
