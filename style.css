@@ -42,7 +42,7 @@ header .menu-nav a:hover {
 
 main {
   grid-area: 2/1/span 1/span 1;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 main::-webkit-scrollbar {
   width: 6px;
@@ -59,25 +59,69 @@ main section {
   align-items: center;
   background: #3d405b;
 }
-main section > div {
-  margin: 20px;
+main #algebra-cal > div {
+  margin: 30px 0;
+  display: grid;
+  grid-template-columns: repeat(4, 110px);
+  grid-template-rows: minmax(110px, auto) repeat(6, 110px);
+}
+main #algebra-cal > div .output {
+  margin: 0 10px;
+  border-radius: 20px;
+  padding: 20px;
+  grid-column: span 4;
+  grid-row: span 2;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  word-wrap: break-word;
+  word-break: break-all;
+  font-size: 2rem;
+  text-align: end;
+  background: rgba(242, 204, 143, 0.1);
+}
+main #algebra-cal > div .horizontal-span {
+  grid-column: span 2;
+}
+main #algebra-cal > div .vertical-span {
+  grid-row: span 2;
+}
+main #algebra-cal > div button {
+  margin: 10px;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 15px;
+  color: #f4f1de;
+  background: #3d405b;
+  cursor: pointer;
+  font: 400 1.25rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font: 600 1.5rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #3d405b;
+  background: #f2cc8f;
+}
+main #algebra-cal > div button:active {
+  background: #f4f1de;
+}
+main #tip-cal > div {
+  margin: 30px 0;
   border-radius: 20px;
   color: #3d405b;
   background: #f2cc8f;
 }
-main #tip-cal div h3 {
+main #tip-cal > div h3 {
   margin: 10px auto;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
-main #tip-cal div form {
+main #tip-cal > div form {
   margin: 10px 20px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
-main #tip-cal div form input {
+main #tip-cal > div form input {
   margin: 10px;
   border: none;
   border-radius: 20px;
@@ -87,7 +131,7 @@ main #tip-cal div form input {
   outline: none;
   font: 400 1.25rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-main #tip-cal div form button {
+main #tip-cal > div form button {
   margin: 10px;
   border: none;
   border-radius: 20px;
@@ -97,28 +141,27 @@ main #tip-cal div form button {
   cursor: pointer;
   font: 400 1.25rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-main #tip-cal div form .num-of-people {
+main #tip-cal > div form .num-of-people {
   margin: 0 10px;
-  font-size: 1.75rem;
 }
-main #tip-cal div .output {
+main #tip-cal > div .output {
   margin: 10px;
   width: 95%;
   display: flex;
   flex-flow: column;
   align-items: flex-end;
 }
-main #tip-cal div .output #total1-output,
-main #tip-cal div .output #total2-output,
-main #tip-cal div .output #total3-output {
+main #tip-cal > div .output #total1-output,
+main #tip-cal > div .output #total2-output,
+main #tip-cal > div .output #total3-output {
   font-size: 2.5rem;
 }
-main #tip-cal div .reset-btn {
+main #tip-cal > div .reset-btn {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-main #tip-cal div .reset-btn button {
+main #tip-cal > div .reset-btn button {
   margin: 10px;
   border: none;
   border-radius: 20px;
