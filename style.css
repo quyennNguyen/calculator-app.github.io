@@ -7,11 +7,6 @@
 body {
   min-width: 700px;
   overflow: scroll;
-  display: grid;
-  grid-template-columns: 95vw;
-  grid-template-rows: 10vh auto 10vh;
-  justify-content: center;
-  align-content: center;
   color: #f4f1de;
   background: rgba(61, 64, 91, 0.9);
   font: 400 1.25rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -21,7 +16,7 @@ body::-webkit-scrollbar {
 }
 
 header {
-  grid-area: 1/1/span 1/span 1;
+  margin: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -40,9 +35,6 @@ header .menu-nav a:hover {
   color: #f2cc8f;
 }
 
-main {
-  grid-area: 2/1/span 1/span 1;
-}
 main section {
   border-radius: 20px;
   margin: 20px;
@@ -53,7 +45,7 @@ main section {
   background: #3d405b;
 }
 main #algebra-cal > div {
-  margin: 30px 0;
+  margin: 50px 0;
   display: grid;
   grid-template-columns: repeat(4, 110px);
   grid-template-rows: minmax(110px, auto) repeat(6, 110px);
@@ -95,7 +87,7 @@ main #algebra-cal > div button:active {
   background: #f4f1de;
 }
 main #base-converter > div {
-  margin: 30px 0;
+  margin: 50px 0;
 }
 main #base-converter > div form #input-num,
 main #base-converter > div form #output-num {
@@ -132,7 +124,7 @@ main #base-converter > div i {
   text-align: center;
 }
 main #tip-cal > div {
-  margin: 30px 0;
+  margin: 50px 0;
   border-radius: 20px;
   color: #3d405b;
   background: #f2cc8f;
@@ -201,7 +193,7 @@ main #tip-cal > div .reset-btn button {
 }
 
 footer {
-  grid-area: 3/1/span 1/span 1;
+  margin: 20px;
   display: flex;
   justify-content: center;
   align-items: center;

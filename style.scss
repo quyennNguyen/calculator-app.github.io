@@ -4,11 +4,6 @@
 body {
     min-width: 700px;
     overflow: scroll;
-    display: grid;
-    grid-template-columns: 95vw;
-    grid-template-rows: 10vh auto 10vh;
-    justify-content: center;
-    align-content: center;
     color: $color-3;
     background: rgba($color-1, 0.9);
     @include body;
@@ -19,7 +14,7 @@ body {
 }
 
 header {
-    grid-area: 1 / 1 / span 1 / span 1;
+    margin: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -38,8 +33,6 @@ header {
 }
 
 main {
-    grid-area: 2 / 1 / span 1 / span 1;
-
     section {
         border-radius: 20px;
         margin: 20px;
@@ -52,7 +45,7 @@ main {
 
     #algebra-cal {
         &>div {
-            margin: 30px 0;
+            margin: 50px 0;
             display: grid;
             grid-template-columns: repeat(4, 110px);
             grid-template-rows: minmax(110px, auto) repeat(6, 110px);
@@ -97,7 +90,7 @@ main {
 
     #base-converter {
         &>div {
-            margin: 30px 0;
+            margin: 50px 0;
 
             form {
                 #input-num,
@@ -132,7 +125,7 @@ main {
 
     #tip-cal {
         &>div {
-            margin: 30px 0;
+            margin: 50px 0;
             border-radius: 20px;
             color: $color-1;
             background: $color-2;
@@ -191,7 +184,7 @@ main {
 }
 
 footer {
-    grid-area: 3 / 1 / span 1 / span 1;
+    margin: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
