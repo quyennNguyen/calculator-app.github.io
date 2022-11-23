@@ -6,7 +6,7 @@ body {
     overflow: scroll;
     display: grid;
     grid-template-columns: 95vw;
-    grid-template-rows: 10vh 80vh 10vh;
+    grid-template-rows: 10vh auto 10vh;
     justify-content: center;
     align-content: center;
     color: $color-3;
@@ -39,21 +39,12 @@ header {
 
 main {
     grid-area: 2 / 1 / span 1 / span 1;
-    overflow-y: scroll;
-
-    &::-webkit-scrollbar {
-        width: 6px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        border-radius: 20px;
-        background: $color-3;
-    }
 
     section {
         border-radius: 20px;
         margin: 20px;
         display: flex;
+        flex-flow: column;
         justify-content: center;
         align-items: center;
         background: $color-1;
@@ -80,7 +71,7 @@ main {
                 word-break: break-all;
                 font-size: 2rem;
                 text-align: end;
-                background: rgba($color-2, 0.1);
+                background: rgba($color-3, 0.3);
             }
 
             .horizontal-span {
@@ -100,6 +91,41 @@ main {
                 &:active {
                     background: $color-3;
                 }
+            }
+        }
+    }
+
+    #base-converter {
+        &>div {
+            margin: 30px 0;
+
+            form {
+                #input-num,
+                #output-num {
+                    width: 300px;
+                    @include input;
+                }
+
+                select {
+                    border: none;
+                    outline: none;
+                    color: $color-1;
+                    background: rgba($color-3, 0.6);
+                    @include body;
+                }
+
+                button {
+                    @include button;
+                    color: $color-1;
+                    background: $color-2;
+                }
+
+            }
+
+            i {
+                margin: 30px;
+                width: 95%;
+                text-align: center;
             }
         }
     }
@@ -126,6 +152,8 @@ main {
 
                 button {
                     @include button;
+                    color: $color-3;
+                    background: $color-1;
                 }
 
                 .num-of-people {
@@ -143,17 +171,19 @@ main {
                 #total1-output,
                 #total2-output,
                 #total3-output {
-                    font-size: 2.5rem;
+                    font-size: 2rem;
                 }
             }
 
             .reset-btn {
                 display: flex;
                 justify-content: center;
-                align-items: center; 
+                align-items: center;
 
                 button {
                     @include button;
+                    color: $color-3;
+                    background: $color-1;
                 }
             }
         }
@@ -165,18 +195,4 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-@media screen and (max-width: 800px) {
-    body {
-        display: block;
-    }
-
-    // header {
-    //     height: 10vh;
-    //     position: -webkit-sticky;
-    //     position: sticky;
-    //     top: 0;
-    //     background: rgba($color-1, 0.9);
-    // }
 }

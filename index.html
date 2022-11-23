@@ -24,23 +24,16 @@
 
     <main>
         <section id="algebra-cal">
+            <h1>ALGEBRA CALC</h1>
             <div>
-                <div class="output" data-result>
+                <div class="output" data-output>
                     <h3 id="previous-operand"></h3>
                     <h3 id="current-operand"></h3>
                 </div>
-                <button data-operator>/
-                    <!-- <i class="fa-solid fa-divide"></i> -->
-                </button>
-                <button data-operator>*
-                    <!-- <i class="fa-solid fa-xmark"></i> -->
-                </button>
-                <button data-operator>-
-                    <!-- <i class="fa-solid fa-minus"></i> -->
-                </button>
-                <button data-operator>+
-                    <!-- <i class="fa-solid fa-plus"></i> -->
-                </button>
+                <button data-operator>/</button>
+                <button data-operator>*</button>
+                <button data-operator>-</button>
+                <button data-operator>+</button>
                 <button data-number>7</button>
                 <button data-number>8</button>
                 <button data-number>9</button>
@@ -63,7 +56,41 @@
         </section>
 
         <section id="base-converter">
-
+            <h1>BASE TO BASE CONVERTER</h1>
+            <div>
+                <form action="" onsubmit="return false">
+                    <label for="input-num">FROM</label>
+                    <input id="input-num" type="text" placeholder="0" onsubmit="convertBase()" required>
+                    <br>
+                    <select id="input-base" required>
+                        <option value="2">Binary (2)</option>
+                        <option value="8">Octal (8)</option>
+                        <option value="10" selected>Decimal (10)</option>
+                        <option value="12">Duodecimal (12)</option>
+                        <option value="16">Hexadecimal (16)</option>
+                        <option value="32">Duotrigesimal (32)</option>
+                        <option value="36">Hexatrigesimal (36)</option>
+                    </select>
+                    <button type="reset">Reset</button>
+                    <button type="submit" onclick="convertBase()">Submit</button>
+                </form>
+                <i class="fa-solid fa-down-long"></i>
+                <form action="" onsubmit="return false">
+                    <label for="output-num">TO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <input id="output-num" placeholder="0" disabled>
+                    <br>
+                    <select id="output-base" required>
+                        <option value="2" selected>Binary (2)</option>
+                        <option value="8">Octal (8)</option>
+                        <option value="10">Decimal (10)</option>
+                        <option value="12">Duodecimal (12)</option>
+                        <option value="16">Hexadecimal (16)</option>
+                        <option value="32">Duotrigesimal (32)</option>
+                        <option value="36">Hexatrigesimal (36)</option>
+                    </select>
+                    <button type="reset">Reset</button>
+                </form>
+            </div>
         </section>
 
         <section id="roman-num-converter">
@@ -71,6 +98,7 @@
         </section>
 
         <section id="tip-cal">
+            <h1>TIP CALC</h1>
             <div>
                 <h3>*******************</h3>
                 <h3>RECEIPT</h3>
