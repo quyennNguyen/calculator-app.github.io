@@ -52,7 +52,49 @@
         </section>
 
         <section id="unit-converter">
+            <h1>UNIT TO UNIT CONVERTER</h1>
+            <div>
+                <form action="" onsubmit="return false">
+                    <label for="input-unit-num">FROM</label>
+                    <input id="input-unit-num" type="text" placeholder="0" onsubmit="convertUnit()" required>
+                    <br>
+                    <select id="input-unit" required>
+                        <optgroup label="S.I. Units">
 
+                        </optgroup>
+                        <optgroup label="Length">
+
+                        </optgroup>
+                        <optgroup label="Weight">
+
+                        </optgroup>
+                        <optgroup label="Time">
+
+                        </optgroup>
+                        <optgroup label="Speed">
+
+                        </optgroup>
+                        <optgroup label="Liquid">
+
+                        </optgroup>
+                        <optgroup label="Temperature">
+                            <option value="F">Fahrenheit</option>
+                            <option value="C">Celsius</option>
+                        </optgroup>
+                    </select>
+                    <button type="submit" onclick="convertUnit()">Submit</button>
+                    <button type="reset">Reset</button>
+                </form>
+                <i class="fa-solid fa-down-long"></i>
+                <form action="" onsubmit="return false">
+                    <label for="output-unit-num">TO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <input id="output-unit-num" placeholder="0" disabled>
+                    <br>
+                    <select id="output-unit" required>
+                    </select>
+                    <button type="reset">Reset</button>
+                </form>
+            </div>
         </section>
 
         <section id="base-converter">
@@ -162,7 +204,9 @@
     </footer>
 
     <script src="https://kit.fontawesome.com/d83c12719b.js" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+    <script src="algebraCal.js"></script>
+    <script src="baseConvert.js"></script>
+    <script src="tipCal.js"></script>
 </body>
 
 </html>
