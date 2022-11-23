@@ -44,8 +44,13 @@ main section {
   align-items: center;
   background: #3d405b;
 }
+main section > h1 {
+  margin-top: 100px;
+}
+main section > div {
+  margin: 50px 0 100px;
+}
 main #algebra-cal > div {
-  margin: 50px 0;
   display: grid;
   grid-template-columns: repeat(4, 110px);
   grid-template-rows: minmax(110px, auto) repeat(6, 110px);
@@ -86,9 +91,6 @@ main #algebra-cal > div button {
 main #algebra-cal > div button:active {
   background: #f4f1de;
 }
-main #base-converter > div {
-  margin: 50px 0;
-}
 main #base-converter > div form #input-num,
 main #base-converter > div form #output-num {
   width: 400px;
@@ -124,7 +126,6 @@ main #base-converter > div i {
   text-align: center;
 }
 main #tip-cal > div {
-  margin: 50px 0;
   border-radius: 20px;
   color: #3d405b;
   background: #f2cc8f;
