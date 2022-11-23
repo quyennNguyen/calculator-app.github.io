@@ -2,7 +2,7 @@
 @import "config";
 
 body {
-    min-width: 600px;
+    min-width: 700px;
     overflow: scroll;
     display: grid;
     grid-template-columns: 95vw;
@@ -102,7 +102,7 @@ main {
             form {
                 #input-num,
                 #output-num {
-                    width: 300px;
+                    width: 400px;
                     @include input;
                 }
 

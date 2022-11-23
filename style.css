@@ -5,7 +5,7 @@
 }
 
 body {
-  min-width: 600px;
+  min-width: 700px;
   overflow: scroll;
   display: grid;
   grid-template-columns: 95vw;
@@ -99,7 +99,7 @@ main #base-converter > div {
 }
 main #base-converter > div form #input-num,
 main #base-converter > div form #output-num {
-  width: 300px;
+  width: 400px;
   margin: 10px;
   border: none;
   border-radius: 20px;
