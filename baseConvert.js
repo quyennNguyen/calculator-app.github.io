@@ -6,17 +6,130 @@ const outputBase = document.getElementById("output-base");
 const binary = ["0", "1", "-", "."];
 const octal = ["0", "1", "2", "3", "4", "5", "6", "7", "-", "."];
 const decimal = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "-", "."];
-const duodecimal = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "-", "."];
-const hexadecimal = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f", "-", "."];
-const duotrigesimal = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "-", "."];
-const hexatrigesimal = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "-", "."];
+const duodecimal = [
+  "0",
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "a",
+  "b",
+  "-",
+  ".",
+];
+const hexadecimal = [
+  "0",
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "-",
+  ".",
+];
+const duotrigesimal = [
+  "0",
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "-",
+  ".",
+];
+const hexatrigesimal = [
+  "0",
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+  "-",
+  ".",
+];
 
 const convertBase = () => {
   let input = inputNum.value.toLowerCase();
   let base1 = Number(inputBase.value);
 
+  if (!isAValidDecimal(input)) {
+    inputNum.value = "invalid input";
+    return;
+  }
+
   if (!isInGivenBase(input, base1)) {
-    inputNum.value = "input and radix do not match";
+    inputNum.value = "invalid input or input and radix do not match";
     return;
   }
 
@@ -39,6 +152,28 @@ const convertBase = () => {
   }
 
   outputNum.value = output;
+};
+
+const isAValidDecimal = (number) => {
+  let result = true;
+
+  let firstHyphen = number.indexOf("-");
+  let lastHyphen = number.lastIndexOf("-");
+
+  if (firstHyphen != -1) {
+    if (firstHyphen != 0 || firstHyphen != lastHyphen) {
+      result = false;
+    }
+  }  
+
+  let firstPoint = number.indexOf(".");
+  let lastPoint = number.lastIndexOf(".");
+
+  if (firstPoint != lastPoint) {
+    result = false;
+  }
+
+  return result;
 };
 
 const isInGivenBase = (number, base) => {
@@ -81,21 +216,3 @@ const validateDigit = (number, arr) => {
   }
   return true;
 };
-
-
-// if (!isAValidDecimal(input)) {
-//   inputNum.value = "invalid input";
-//   return;
-// }
-
-// const isAValidDecimal = (number) => {
-//   let result = true;
-//   let firstPoint = number.indexOf(".");
-//   let lastPoint = number.lastIndexOf(".");
-
-//   if (firstPoint != lastPoint) {
-//     result = false;
-//   }
-
-//   return result;
-// };
