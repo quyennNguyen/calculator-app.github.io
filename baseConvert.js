@@ -1,6 +1,6 @@
-const inputNum = document.getElementById("input-num");
+const inputNum = document.getElementById("input-base-num");
 const inputBase = document.getElementById("input-base");
-const outputNum = document.getElementById("output-num");
+const outputNum = document.getElementById("output-base-num");
 const outputBase = document.getElementById("output-base");
 
 const binary = ["0", "1", "-", "."];
@@ -12,26 +12,26 @@ const duotrigesimal = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b
 const hexatrigesimal = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "-", "."];
 
 const convertBase = () => {
-  let input = inputNum.value;
+  let input = inputNum.value.toLowerCase();
   let base1 = Number(inputBase.value);
 
-  if (isInGivenBase(input, base1) == false) {
-    inputNum.value = "invalid input";
+  if (!isInGivenBase(input, base1)) {
+    inputNum.value = "input and radix do not match";
     return;
   }
 
-  // how to convert float number with decimal point from a non-10 base?
-  // how to prevent multiple input of "."
-
+  // convert initial base to base 10
   if (base1 == 10) {
     input = Number(input);
   } else {
-    input = parseInt(input, base1);
+    // input = parseInt(input, base1);
+    // how to take input with decimal point from a non-10 base; ex, 123abc.456
   }
 
   let base2 = Number(outputBase.value);
   let output = 0;
 
+  // from base 10, convert it to final base
   if (base2 == 10) {
     output = input;
   } else {
@@ -46,25 +46,25 @@ const isInGivenBase = (number, base) => {
 
   switch (base) {
     case 2:
-      result = loopBase(number, binary);
+      result = validateDigit(number, binary);
       break;
     case 8:
-      result = loopBase(number, octal);
+      result = validateDigit(number, octal);
       break;
     case 10:
-      result = loopBase(number, decimal);
+      result = validateDigit(number, decimal);
       break;
     case 12:
-      result = loopBase(number, duodecimal);
+      result = validateDigit(number, duodecimal);
       break;
     case 16:
-      result = loopBase(number, hexadecimal);
+      result = validateDigit(number, hexadecimal);
       break;
     case 32:
-      result = loopBase(number, duotrigesimal);
+      result = validateDigit(number, duotrigesimal);
       break;
     case 36:
-      result = loopBase(number, hexatrigesimal);
+      result = validateDigit(number, hexatrigesimal);
       break;
     default:
       return;
@@ -73,11 +73,29 @@ const isInGivenBase = (number, base) => {
   return result;
 };
 
-const loopBase = (number, array) => {
+const validateDigit = (number, arr) => {
   for (let i of number) {
-    if (!array.includes(i)) {
+    if (!arr.includes(i)) {
       return false;
     }
   }
   return true;
 };
+
+
+// if (!isAValidDecimal(input)) {
+//   inputNum.value = "invalid input";
+//   return;
+// }
+
+// const isAValidDecimal = (number) => {
+//   let result = true;
+//   let firstPoint = number.indexOf(".");
+//   let lastPoint = number.lastIndexOf(".");
+
+//   if (firstPoint != lastPoint) {
+//     result = false;
+//   }
+
+//   return result;
+// };

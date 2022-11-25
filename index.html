@@ -52,7 +52,7 @@
         </section>
 
         <section id="unit-converter">
-            <h1>UNIT TO UNIT CONVERTER</h1>
+            <!-- <h1>UNIT TO UNIT CONVERTER</h1>
             <div>
                 <form action="" onsubmit="return false">
                     <label for="input-unit-num">FROM</label>
@@ -69,9 +69,6 @@
 
                         </optgroup>
                         <optgroup label="Time">
-
-                        </optgroup>
-                        <optgroup label="Speed">
 
                         </optgroup>
                         <optgroup label="Liquid">
@@ -94,15 +91,15 @@
                     </select>
                     <button type="reset">Reset</button>
                 </form>
-            </div>
+            </div> -->
         </section>
 
         <section id="base-converter">
             <h1>BASE TO BASE CONVERTER</h1>
             <div>
                 <form action="" onsubmit="return false">
-                    <label for="input-num">FROM</label>
-                    <input id="input-num" type="text" placeholder="0" onsubmit="convertBase()" required>
+                    <label for="input-base-num">FROM</label>
+                    <input id="input-base-num" type="text" placeholder="0" onsubmit="convertBase()" required>
                     <br>
                     <select id="input-base" required>
                         <option value="2">Binary (2)</option>
@@ -118,8 +115,8 @@
                 </form>
                 <i class="fa-solid fa-down-long"></i>
                 <form action="" onsubmit="return false">
-                    <label for="output-num">TO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                    <input id="output-num" placeholder="0" disabled>
+                    <label for="output-base-num">TO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <input id="output-base-num" placeholder="0" disabled>
                     <br>
                     <select id="output-base" required>
                         <option value="2" selected>Binary (2)</option>

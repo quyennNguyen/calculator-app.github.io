@@ -95,11 +95,44 @@ main {
         }
     }
 
+    #unit-converter {
+        &>div {
+            form {
+                #input-unit-num,
+                #output-unit-num {
+                    width: 400px;
+                    @include input;
+                }
+
+                select {
+                    border: none;
+                    outline: none;
+                    color: $color-1;
+                    background: rgba($color-3, 0.6);
+                    @include body;
+                }
+
+                button {
+                    @include button;
+                    color: $color-1;
+                    background: $color-2;
+                }
+
+            }
+
+            i {
+                margin: 30px;
+                width: 95%;
+                text-align: center;
+            }
+        }
+    }
+
     #base-converter {
         &>div {
             form {
-                #input-num,
-                #output-num {
+                #input-base-num,
+                #output-base-num {
                     width: 400px;
                     @include input;
                 }
