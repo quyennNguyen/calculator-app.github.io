@@ -123,14 +123,8 @@ const convertBase = () => {
   let input = inputNum.value.toLowerCase();
   let base1 = Number(inputBase.value);
 
-  if (!isAValidDecimal(input)) {
+  if (!isAValidDecimal(input) || !isInGivenBase(input, base1)) {
     inputNum.value = "invalid input";
-    outputNum.value = 0;
-    return;
-  }
-
-  if (!isInGivenBase(input, base1)) {
-    inputNum.value = "invalid input or input and radix do not match";
     outputNum.value = 0;
     return;
   }
