@@ -125,26 +125,31 @@ const convertBase = () => {
 
   if (!isAValidDecimal(input)) {
     inputNum.value = "invalid input";
+    outputNum.value = 0;
     return;
   }
 
   if (!isInGivenBase(input, base1)) {
     inputNum.value = "invalid input or input and radix do not match";
+    outputNum.value = 0;
     return;
   }
 
-  // convert initial base to base 10
   if (base1 == 10) {
     input = Number(input);
   } else {
-    // input = parseInt(input, base1);
-    // how to take input with decimal point from a non-10 base; ex, 123abc.456
+    let pointIndex = input.indexOf(".");
+
+    if ( pointIndex == -1) {
+      input = parseInt(input, base1);
+    } else {
+      input = convertFraction(input, base1, pointIndex);
+    }
   }
 
   let base2 = Number(outputBase.value);
   let output = 0;
 
-  // from base 10, convert it to final base
   if (base2 == 10) {
     output = input;
   } else {
@@ -164,7 +169,7 @@ const isAValidDecimal = (number) => {
     if (firstHyphen != 0 || firstHyphen != lastHyphen) {
       result = false;
     }
-  }  
+  }
 
   let firstPoint = number.indexOf(".");
   let lastPoint = number.lastIndexOf(".");
@@ -215,4 +220,24 @@ const validateDigit = (number, arr) => {
     }
   }
   return true;
+};
+
+const convertFraction = (number, base, point) => {
+  let result = 0;
+
+  let wholeNumberPart = parseInt(number, base);
+  let fractionPart = 0;
+  let str = number.slice(point + 1);
+
+  for (let i in str) {
+    fractionPart += Number(str[i]) / Math.pow(base, i + 1);
+  }
+
+  if (wholeNumberPart < 0) {
+    result = wholeNumberPart - fractionPart;
+  } else {
+    result = wholeNumberPart + fractionPart;
+  }
+
+  return result;
 };
