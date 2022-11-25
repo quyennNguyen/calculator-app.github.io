@@ -122,6 +122,8 @@ const hexatrigesimal = [
 const convertBase = () => {
   let input = inputNum.value.toLowerCase();
   let base1 = Number(inputBase.value);
+  let base2 = Number(outputBase.value);
+  let output = 0;
 
   if (!isAValidDecimal(input) || !isInGivenBase(input, base1)) {
     inputNum.value = "invalid input";
@@ -137,12 +139,9 @@ const convertBase = () => {
     if ( pointIndex == -1) {
       input = parseInt(input, base1);
     } else {
-      input = convertFraction(input, base1, pointIndex);
+      input = convertFractionToDecimal(input, base1, pointIndex);
     }
   }
-
-  let base2 = Number(outputBase.value);
-  let output = 0;
 
   if (base2 == 10) {
     output = input;
@@ -153,20 +152,71 @@ const convertBase = () => {
   outputNum.value = output;
 };
 
+const convertFractionToDecimal = (number, base, point) => {
+  let result = 0;
+
+  let wholeNumberPart = parseInt(number, base);
+  let fractionPart = computeFractionPart(number.slice(point + 1), base);
+
+  if (wholeNumberPart < 0) {
+    result = wholeNumberPart - fractionPart;
+  } else {
+    result = wholeNumberPart + fractionPart;
+  }
+
+  return result;
+};
+
+const computeFractionPart = (number, base) => {
+  let result = 0;
+  let arr = [];
+
+  switch (base) {
+    case 2:
+      arr = binary;
+      break;
+    case 8:
+      arr = octal;
+      break;
+    case 10:
+      arr = decimal;
+      break;
+    case 12:
+      arr = duodecimal;
+      break;
+    case 16:
+      arr = hexadecimal;
+      break;
+    case 32:
+      arr = duotrigesimal;
+      break;
+    case 36:
+      arr = hexatrigesimal;
+      break;
+    default:
+      break;
+  }
+
+  for (let i in number) {
+    result += arr.indexOf(number[i]) / Math.pow(base, Number(i) + 1);
+  }
+
+  return result;
+};
+
 const isAValidDecimal = (number) => {
   let result = true;
 
   let firstHyphen = number.indexOf("-");
   let lastHyphen = number.lastIndexOf("-");
+  let firstPoint = number.indexOf(".");
+  let lastPoint = number.lastIndexOf(".");
 
   if (firstHyphen != -1) {
     if (firstHyphen != 0 || firstHyphen != lastHyphen) {
       result = false;
     }
   }
-
-  let firstPoint = number.indexOf(".");
-  let lastPoint = number.lastIndexOf(".");
 
   if (firstPoint != lastPoint) {
     result = false;
@@ -201,7 +251,7 @@ const isInGivenBase = (number, base) => {
       result = validateDigit(number, hexatrigesimal);
       break;
     default:
-      return;
+      break;
   }
 
   return result;
@@ -214,24 +264,4 @@ const validateDigit = (number, arr) => {
     }
   }
   return true;
-};
-
-const convertFraction = (number, base, point) => {
-  let result = 0;
-
-  let wholeNumberPart = parseInt(number, base);
-  let fractionPart = 0;
-  let str = number.slice(point + 1);
-
-  for (let i in str) {
-    fractionPart += Number(str[i]) / Math.pow(base, i + 1);
-  }
-
-  if (wholeNumberPart < 0) {
-    result = wholeNumberPart - fractionPart;
-  } else {
-    result = wholeNumberPart + fractionPart;
-  }
-
-  return result;
 };
