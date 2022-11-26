@@ -91,40 +91,6 @@ main #algebra-cal > div button {
 main #algebra-cal > div button:active {
   background: #f4f1de;
 }
-main #unit-converter > div form #input-unit-num,
-main #unit-converter > div form #output-unit-num {
-  width: 400px;
-  margin: 10px;
-  border: none;
-  border-radius: 20px;
-  padding: 10px 15px;
-  color: #3d405b;
-  background: #f4f1de;
-  outline: none;
-  font: 400 1.25rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-main #unit-converter > div form select {
-  border: none;
-  outline: none;
-  color: #3d405b;
-  background: rgba(244, 241, 222, 0.6);
-  font: 400 1.25rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-main #unit-converter > div form button {
-  margin: 10px;
-  border: none;
-  border-radius: 20px;
-  padding: 5px 15px;
-  cursor: pointer;
-  font: 400 1.25rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #3d405b;
-  background: #f2cc8f;
-}
-main #unit-converter > div i {
-  margin: 30px;
-  width: 95%;
-  text-align: center;
-}
 main #base-converter > div form #input-base-num,
 main #base-converter > div form #output-base-num {
   width: 400px;
@@ -138,6 +104,7 @@ main #base-converter > div form #output-base-num {
   font: 400 1.25rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 main #base-converter > div form select {
+  margin: 10px;
   border: none;
   outline: none;
   color: #3d405b;
@@ -155,6 +122,41 @@ main #base-converter > div form button {
   background: #f2cc8f;
 }
 main #base-converter > div i {
+  margin: 30px;
+  width: 95%;
+  text-align: center;
+}
+main #numeric-system-converter > div form #input-num,
+main #numeric-system-converter > div form #output-num {
+  width: 400px;
+  margin: 10px;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 15px;
+  color: #3d405b;
+  background: #f4f1de;
+  outline: none;
+  font: 400 1.25rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+main #numeric-system-converter > div form select {
+  margin: 10px;
+  border: none;
+  outline: none;
+  color: #3d405b;
+  background: rgba(244, 241, 222, 0.6);
+  font: 400 1.25rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+main #numeric-system-converter > div form button {
+  margin: 10px;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 15px;
+  cursor: pointer;
+  font: 400 1.25rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #3d405b;
+  background: #f2cc8f;
+}
+main #numeric-system-converter > div i {
   margin: 30px;
   width: 95%;
   text-align: center;

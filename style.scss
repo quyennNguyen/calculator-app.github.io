@@ -95,16 +95,17 @@ main {
         }
     }
 
-    #unit-converter {
+    #base-converter {
         &>div {
             form {
-                #input-unit-num,
-                #output-unit-num {
+                #input-base-num,
+                #output-base-num {
                     width: 400px;
                     @include input;
                 }
 
                 select {
+                    margin: 10px;
                     border: none;
                     outline: none;
                     color: $color-1;
@@ -128,16 +129,17 @@ main {
         }
     }
 
-    #base-converter {
+    #numeric-system-converter {
         &>div {
             form {
-                #input-base-num,
-                #output-base-num {
+                #input-num,
+                #output-num {
                     width: 400px;
                     @include input;
                 }
 
                 select {
+                    margin: 10px;
                     border: none;
                     outline: none;
                     color: $color-1;

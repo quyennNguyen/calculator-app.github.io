@@ -15,9 +15,8 @@
         <h1 class="title">QQ</h1>
         <nav class="menu-nav">
             <a href="#algebra-cal">Algebra</a>
-            <a href="#unit-converter">Units</a>
             <a href="#base-converter">Bases</a>
-            <a href="#roman-num-converter">Roman</a>
+            <a href="#numeric-system-converter">Roman</a>
             <a href="#tip-cal">Tip</a>
         </nav>
     </header>
@@ -49,49 +48,6 @@
                 <button class="horizontal-span" data-number>0</button>
                 <button data-number>.</button>
             </div>
-        </section>
-
-        <section id="unit-converter">
-            <!-- <h1>UNIT TO UNIT CONVERTER</h1>
-            <div>
-                <form action="" onsubmit="return false">
-                    <label for="input-unit-num">FROM</label>
-                    <input id="input-unit-num" type="text" placeholder="0" onsubmit="convertUnit()" required>
-                    <br>
-                    <select id="input-unit" required>
-                        <optgroup label="S.I. Units">
-
-                        </optgroup>
-                        <optgroup label="Length">
-
-                        </optgroup>
-                        <optgroup label="Weight">
-
-                        </optgroup>
-                        <optgroup label="Time">
-
-                        </optgroup>
-                        <optgroup label="Liquid">
-
-                        </optgroup>
-                        <optgroup label="Temperature">
-                            <option value="F">Fahrenheit</option>
-                            <option value="C">Celsius</option>
-                        </optgroup>
-                    </select>
-                    <button type="submit" onclick="convertUnit()">Submit</button>
-                    <button type="reset">Reset</button>
-                </form>
-                <i class="fa-solid fa-down-long"></i>
-                <form action="" onsubmit="return false">
-                    <label for="output-unit-num">TO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                    <input id="output-unit-num" placeholder="0" disabled>
-                    <br>
-                    <select id="output-unit" required>
-                    </select>
-                    <button type="reset">Reset</button>
-                </form>
-            </div> -->
         </section>
 
         <section id="base-converter">
@@ -132,8 +88,26 @@
             </div>
         </section>
 
-        <section id="roman-num-converter">
-
+        <section id="numeric-system-converter">
+            <h1>ROMAN TO DECIMAL CONVERTER</h1>
+            <div>
+                <form action="" onsubmit="return false">
+                    <label for="input-num">FROM</label>
+                    <input id="input-num" type="text" placeholder="0" onsubmit="convertNumSystem()" required>
+                    <br>
+                    <select id="num-system" required>
+                        <option value="decimal">Decimal Numbers</option>
+                        <option value="roman">Roman Numerals</option>
+                    </select>
+                    <button type="submit" onclick="convertNumSystem()">Submit</button>
+                    <button type="reset">Reset</button>
+                </form>
+                <i class="fa-solid fa-down-long"></i>
+                <form action="" onsubmit="return false">
+                    <label for="output-num">TO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <input id="output-num" placeholder="0" disabled>
+                </form>
+            </div>
         </section>
 
         <section id="tip-cal">
@@ -186,7 +160,6 @@
                 <div class="reset-btn">
                     <button type="reset" onclick="reset()">Reset</button>
                 </div>
-                <h3>THANK YOU</h3>
                 <h3>
                     <i class="fa-solid fa-barcode fa-2x"></i>
                     <i class="fa-solid fa-barcode fa-2x"></i>
@@ -202,7 +175,8 @@
 
     <script src="https://kit.fontawesome.com/d83c12719b.js" crossorigin="anonymous"></script>
     <script src="algebraCal.js"></script>
-    <script src="baseConvert.js"></script>
+    <script src="baseConv.js"></script>
+    <script src="numericSystemConv.js"></script>
     <script src="tipCal.js"></script>
 </body>
 
