@@ -1,45 +1,64 @@
-const inputNum = document.getElementById("input-num");
+const inputNumType = document.getElementById("input-num");
 const inputSystem = document.getElementById("num-system");
-const outputNum = document.getElementById("output-num");
+const outputNumType = document.getElementById("output-num");
 
-const decimalDigits = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-const romanDigits = {"I":1, "V":5, "X":10, "L":50, "C":100, "D":500, "M":1000};
+const romanDigits = {
+  M: 1000,
+  CM: 900,
+  D: 500,
+  CD: 400,
+  C: 100,
+  XC: 90,
+  L: 50,
+  XL: 40,
+  X: 10,
+  IX: 9,
+  V: 5,
+  IV: 4,
+  I: 1,
+};
 
 const convertNumSystem = () => {
-  // let input = inputNum.value.toUpperCase();
-  // let system = inputSystem.value;
-  // let output = 0;
+  let input = inputNumType.value.toUpperCase();
+  let system = inputSystem.value;
+  let output = 2;
 
-  // switch (system) {
-  //   case "decimal":
-  //     if (!isDecimalNumber(input)) {
-  //       inputNum.value = "invalid input";
-  //       outputNum.value = 2;
-  //       return;
-  //     }
+  switch (system) {
+    case "decimal":
+      if (!isDecimalNumber(input)) {
+        inputNumType.value = "invalid input";
+        outputNumType.value = 0;
+        return;
+      }
+      output = convertDecimalToRoman(input);
+      break;
+    case "roman":
+      if (!isRomanNumeral(input)) {
+        inputNumType.value = "invalid input";
+        outputNumType.value = 0;
+        return;
+      }
+      output = convertRomanToDecimal(input);
+      break;
+    default:
+      break;
+  }
 
-  //     output = convertDecimalToRoman(input);
-  //     break;
-  //   case "roman":
-  //     if (!isRomanNumeral(input)) {
-  //       inputNum.value = "invalid input";
-  //       outputNum.value = 2;
-  //       return;
-  //     }
-
-  //     output = convertRomanToDecimal(input);
-  //     break;
-  //   default:
-  //     break;
-  // }
-
-  outputNum.value = 2;
+  outputNumType.value = output;
 };
 
 const isDecimalNumber = (number) => {
-  let number = Number(number);
+  if (isNaN(number)) {
+    return false;
+  }
 
-  if (isNaN(number) || number < 1 || number > 3999 || !Number.isInteger(number)) {
+  number = Number(number);
+
+  if (
+    Number(number) < 1 ||
+    Number(number) > 3999 ||
+    !Number.isInteger(number)
+  ) {
     return false;
   }
 
@@ -48,7 +67,7 @@ const isDecimalNumber = (number) => {
 
 const isRomanNumeral = (number) => {
   for (let i of number) {
-    if (!romanDigits.includes(i)) {
+    if (!(i in romanDigits)) {
       return false;
     }
   }
@@ -57,9 +76,42 @@ const isRomanNumeral = (number) => {
 };
 
 convertDecimalToRoman = (number) => {
+  let result = "";
+  number = Number(number);
 
+  for (let i in romanDigits) {
+    let x = romanDigits[i];
+
+    while (number >= x) {
+      result += i;
+      number -= x;
+    }
+  }
+
+  return result;
 };
 
 convertRomanToDecimal = (number) => {
+  let result = 0;
 
+  for (let i in number) {
+    let x = number[i];
+    let current = romanDigits[x];
+    let y = number[Number(i) + 1];
+    let next = romanDigits[y];
+    console.log(x, current, y, next);
+
+    if (y == undefined && next == undefined) {
+      result += current;
+    } else {
+      if (current >= next) {
+        result += current;
+      } else {
+        result -= current;
+      }
+    }
+    console.log(result);
+  }
+
+  return result;
 };
