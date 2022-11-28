@@ -66,6 +66,10 @@ const isDecimalNumber = (number) => {
 };
 
 const isRomanNumeral = (number) => {
+  // how to validate the number order (must be in descending order)
+  // ex: IVX -> return false
+  //     XIV -> return true
+
   for (let i of number) {
     if (!(i in romanDigits)) {
       return false;
