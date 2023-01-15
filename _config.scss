@@ -21,12 +21,12 @@
 }
 
 @mixin link {
-    color: $color-3;
+    color: $color-4;
     text-decoration: none;
     @include body;
 
     &:hover {
-        color: $color-2;
+        font-weight: map-get($font-weight, L);
     }
 }
 
@@ -35,6 +35,8 @@
     border: none;
     border-radius: 20px;
     padding: 5px 15px;
+    color: $color-1;
+    background: $color-3;
     cursor: pointer;
     @include body;
 }
