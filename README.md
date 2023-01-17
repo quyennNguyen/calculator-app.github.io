@@ -1,1 +1,1 @@
-# supercalculator.github.io
+# thecalculator.github.io
