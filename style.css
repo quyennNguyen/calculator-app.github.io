@@ -29,7 +29,6 @@ header .menu-nav a {
   color: #000000;
   text-decoration: none;
   font: 400 1.25rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font: 600 1.5rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 header .menu-nav a:hover {
   font-weight: 800;
