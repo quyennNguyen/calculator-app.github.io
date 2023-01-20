@@ -21,66 +21,39 @@ const romanDigits = {
 const convertNumSystem = () => {
   let input = inputNumType.value.toUpperCase();
   let system = inputSystem.value;
-  let output = 2;
 
   switch (system) {
     case "decimal":
-      if (!isDecimalNumber(input)) {
+      if (!convertDecimalToRoman(input)) {
         inputNumType.value = "invalid input";
         outputNumType.value = 0;
         return;
       }
-      output = convertDecimalToRoman(input);
       break;
     case "roman":
-      if (!isRomanNumeral(input)) {
+      if (!convertRomanToDecimal(input)) {
         inputNumType.value = "invalid input";
         outputNumType.value = 0;
         return;
       }
-      output = convertRomanToDecimal(input);
       break;
     default:
       break;
   }
-
-  outputNumType.value = output;
-};
-
-const isDecimalNumber = (number) => {
-  if (isNaN(number)) {
-    return false;
-  }
-
-  number = Number(number);
-
-  if (
-    Number(number) < 1 ||
-    Number(number) > 3999 ||
-    !Number.isInteger(number)
-  ) {
-    return false;
-  }
-
-  return true;
-};
-
-const isRomanNumeral = (number) => {
-  // how to validate the number order (must be in descending order)
-  // ex: IVX -> return false
-  //     XIV -> return true
-
-  for (let i of number) {
-    if (!(i in romanDigits)) {
-      return false;
-    }
-  }
-
-  return true;
 };
 
 convertDecimalToRoman = (number) => {
   let result = "";
+
+  if (
+    isNaN(number) ||
+    Number(number) < 1 ||
+    Number(number) > 3999 ||
+    !Number.isInteger(Number(number))
+  ) {
+    return false;
+  }
+
   number = Number(number);
 
   for (let i in romanDigits) {
@@ -92,30 +65,73 @@ convertDecimalToRoman = (number) => {
     }
   }
 
-  return result;
+  outputNumType.value = result;
+  return true;
 };
 
 convertRomanToDecimal = (number) => {
+  // let result = 0;
+
+  // for (let i in number) {
+  //   let x = number[i];
+  //   let current = romanDigits[x];
+  //   let y = number[Number(i) + 1];
+  //   let next = romanDigits[y];
+
+  //   if (y == undefined && next == undefined) {
+  //     result += current;
+  //   } else {
+  //     if (current >= next) {
+  //       result += current;
+  //     } else {
+  //       result -= current;
+  //     }
+  //   }
+  //   console.log(result);
+  // }
+
+  // return result;
+
   let result = 0;
 
-  for (let i in number) {
-    let x = number[i];
-    let current = romanDigits[x];
-    let y = number[Number(i) + 1];
-    let next = romanDigits[y];
-    console.log(x, current, y, next);
-
-    if (y == undefined && next == undefined) {
-      result += current;
-    } else {
-      if (current >= next) {
-        result += current;
-      } else {
-        result -= current;
-      }
+  for (let i of number) {
+    if (!(i in romanDigits)) {
+      return false;
     }
-    console.log(result);
   }
 
-  return result;
+  let arr = [];
+
+  for (let i = 0; i < number.length; i++) {
+    let current = number[i];
+    let next = number[i + 1];
+
+    if (next == undefined) {
+      arr.push(romanDigits[current]);
+    } else {
+      let cn = current + next;
+
+      if (cn in romanDigits) {
+        arr.push(romanDigits[cn]);
+        i++;
+      } else {
+        arr.push(romanDigits[current]);
+      }
+    }
+  }
+
+  let isDescending = arr.every((x, i) => {
+    return (i == 0) || (x <= arr[i - 1]);
+  });
+
+  console.log(arr, isDescending)
+
+  if (isDescending) {
+    result = arr.reduce((a, b) => a + b);
+  } else {
+    return false;
+  }
+
+  outputNumType.value = result;
+  return true;
 };
