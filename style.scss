@@ -63,13 +63,17 @@ main {
                 align-items: flex-end;
                 word-wrap: break-word;
                 word-break: break-all;
-                font-size: 2rem;
                 text-align: end;
                 background: $color-1;
 
-                #previous-operand,
-                #current-operand {
+                #previous-operand {
                     min-height: 3rem;
+                    @include subtitle;
+                }
+
+                #current-operand {
+                    min-height: 4rem;
+                    @include title;
                 }
             }
 
@@ -87,7 +91,7 @@ main {
 
             button {
                 @include button;
-                @include subtitle;
+                font-weight: map-get($font-weight, L);
 
                 &:active {
                     background: white;
