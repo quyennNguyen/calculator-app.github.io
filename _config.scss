@@ -19,11 +19,7 @@
 @mixin link {
     color: $color-4;
     text-decoration: none;
-    @include body;
-
-    &:hover {
-        font-weight: map-get($font-weight, L);
-    }
+    font-weight: map-get($font-weight, L);
 }
 
 @mixin button {
