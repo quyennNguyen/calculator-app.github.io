@@ -24,22 +24,31 @@ header {
 header .title {
   font: 800 3rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-header .menu-nav a {
-  margin: 0 10px;
-  color: #000000;
-  text-decoration: none;
-  font-weight: 800;
+header #wave {
+  display: flex;
+}
+header #wave i {
+  margin: 0 5px;
+}
+header #wave i:nth-child(1) {
+  -webkit-animation: animate1 1s ease-in-out 0.1s infinite;
+          animation: animate1 1s ease-in-out 0.1s infinite;
+}
+header #wave i:nth-child(2) {
+  -webkit-animation: animate1 1s ease-in-out 0.2s infinite;
+          animation: animate1 1s ease-in-out 0.2s infinite;
+}
+header #wave i:nth-child(3) {
+  -webkit-animation: animate1 1s ease-in-out 0.3s infinite;
+          animation: animate1 1s ease-in-out 0.3s infinite;
 }
 
 main section {
-  border-radius: 20px;
-  margin: 20px;
   padding: 100px 0;
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  background: #dedcdc;
 }
 main #algebra-cal > div {
   margin-top: 50px;

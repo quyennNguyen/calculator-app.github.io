@@ -13,16 +13,15 @@
 <body>
     <header>
         <h1 class="title">QQ</h1>
-        <nav class="menu-nav">
-            <a href="#algebra-cal">Algebra</a>
-            <a href="#base-converter">Bases</a>
-            <a href="#numeric-system-converter">Roman</a>
-            <a href="#tip-cal">Tip</a>
-        </nav>
+        <h3 id="wave">
+            <i class="fa-solid fa-calculator"></i>
+            <i class="fa-solid fa-calculator"></i>
+            <i class="fa-solid fa-calculator"></i>
+        </h3>
     </header>
 
     <main>
-        <section id="algebra-cal">
+        <section class="calc" id="algebra-cal">
             <h1>ALGEBRA CALC</h1>
             <div>
                 <div class="output" data-output>
@@ -50,7 +49,7 @@
             </div>
         </section>
 
-        <section id="base-converter">
+        <section class="calc" id="base-converter">
             <h1>BASE TO BASE CONVERTER</h1>
             <div>
                 <form action="" onsubmit="return false">
@@ -87,7 +86,7 @@
             </div>
         </section>
 
-        <section id="numeric-system-converter">
+        <section class="calc" id="numeric-system-converter">
             <h1>ROMAN & DECIMAL CONVERTER</h1>
             <div>
                 <form action="" onsubmit="return false">
@@ -110,7 +109,7 @@
             </div>
         </section>
 
-        <section id="tip-cal">
+        <section class="calc" id="tip-cal">
             <h1>TIP CALC</h1>
             <div>
                 <h3>
@@ -176,6 +175,7 @@
     </footer>
 
     <script src="https://kit.fontawesome.com/d83c12719b.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
     <script src="algebraCal.js"></script>
     <script src="baseConv.js"></script>
     <script src="numericSystemConv.js"></script>

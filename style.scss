@@ -23,24 +23,28 @@ header {
         @include title;
     }
 
-    .menu-nav {
-        a {
-            margin: 0 10px;
-            @include link;
+    #wave {
+        display: flex;
+        
+        i {
+            margin: 0 5px;
+        }
+
+        @for $i from 1 through 3 {
+            i:nth-child(#{$i}) {
+                animation: animate1 1s ease-in-out #{$i * 0.1}s infinite;
+            }
         }
     }
 }
 
 main {
     section {
-        border-radius: 20px;
-        margin: 20px;
         padding: 100px 0;
         display: flex;
         flex-flow: column;
         justify-content: center;
         align-items: center;
-        background: $color-2;
     }
 
     #algebra-cal {
