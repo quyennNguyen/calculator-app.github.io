@@ -16,12 +16,6 @@
     font: map-get($font-weight, "S") map-get($font-size, "S") $font-family;
 }
 
-@mixin link {
-    color: $color-4;
-    text-decoration: none;
-    font-weight: map-get($font-weight, L);
-}
-
 @mixin button {
     margin: 10px;
     border: none;
