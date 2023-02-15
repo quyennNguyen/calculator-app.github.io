@@ -38,7 +38,7 @@ header {
     
     #banner {
         height: 100vh;
-        min-height: 700px;
+        min-height: 1000px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -55,7 +55,7 @@ header {
                 font-weight: map-get($font-weight, L);
             }
 
-            h4 {
+            p {
                 text-align: right;
                 opacity: 0.5;
             }

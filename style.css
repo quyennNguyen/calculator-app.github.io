@@ -37,7 +37,7 @@ header #top-head a:hover {
 }
 header #banner {
   height: 100vh;
-  min-height: 700px;
+  min-height: 1000px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,7 +50,7 @@ header #banner #intro h2 {
   font-size: 4rem;
   font-weight: 800;
 }
-header #banner #intro h4 {
+header #banner #intro p {
   text-align: right;
   opacity: 0.5;
 }
