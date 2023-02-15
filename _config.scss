@@ -5,26 +5,27 @@
 }
 
 @mixin title {
-    font: map-get($font-weight, "L") map-get($font-size, "L") $font-family;
+    font: map-get($font-weight, L) map-get($font-size, L) $font-family;
 }
 
 @mixin subtitle {
-    font: map-get($font-weight, "M") map-get($font-size, "M") $font-family;
+    font: map-get($font-weight, M) map-get($font-size, M) $font-family;
 }
 
 @mixin body {
-    font: map-get($font-weight, "S") map-get($font-size, "S") $font-family;
+    font: map-get($font-weight, S) map-get($font-size, S) $font-family;
 }
 
 @mixin button {
     margin: 10px;
     border: none;
     border-radius: 20px;
-    padding: 5px 15px;
-    color: $color-1;
-    background: $color-3;
+    padding: 10px 15px;
+    font-size: map-get($font-size, S);
+    font-weight: map-get($font-weight, L);
+    color: $light-2;
+    background: $light-1;
     cursor: pointer;
-    @include body;
 }
 
 @mixin input {
@@ -32,8 +33,8 @@
     border: none;
     border-radius: 20px;
     padding: 10px 15px;
-    color: $color-1;
-    background: $color-3;
+    color: $dark-2;
+    background: $mid-color;
     outline: none;
     @include body;
 }

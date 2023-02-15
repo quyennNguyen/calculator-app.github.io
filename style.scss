@@ -4,8 +4,8 @@
 body {
     min-width: 800px;
     overflow: scroll;
-    color: $color-4;
-    background: $color-1;
+    color: $light-2;
+    background: $light-1;
     @include body;
 
     &::-webkit-scrollbar {
@@ -15,24 +15,72 @@ body {
 
 header {
     margin: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 
-    .title {
-        @include title;
+    #top-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    
+        h1 {
+            @include title;
+        }
+    
+        a {
+            text-decoration: none;
+            font-weight: map-get($font-weight, L);
+            color: $light-2;
+
+            &:hover {
+                text-decoration: underline $mid-color 5px;
+            }
+        }
+    }
+    
+    #banner {
+        height: 100vh;
+        min-height: 700px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        #intro {
+
+            h1 {
+                font-size: 7rem;
+                font-weight: map-get($font-weight, L);
+            }
+
+            h2{
+                font-size: 4rem;
+                font-weight: map-get($font-weight, L);
+            }
+
+            h4 {
+                text-align: right;
+                opacity: 0.5;
+            }
+        }
+        
+        img {
+            width: 400px;
+        }
     }
 
-    #wave {
+    nav {
         display: flex;
-        
-        i {
-            margin: 0 5px;
-        }
+        justify-content: space-evenly;
+        align-items: center;
 
-        @for $i from 1 through 3 {
-            i:nth-child(#{$i}) {
-                animation: animate1 1s ease-in-out #{$i * 0.1}s infinite;
+        a {
+            border: solid;
+            padding: 30px;
+            width: 150px;
+            height: 150px;
+            text-decoration: none;
+            color: $light-2;
+
+            &:hover {
+                transform: translateY(-10px);
             }
         }
     }
@@ -41,22 +89,26 @@ header {
 main {
     section {
         padding: 100px 0;
-        display: flex;
+        display: none;
         flex-flow: column;
         justify-content: center;
         align-items: center;
+        color: $dark-2;
+        background: $dark-1;
+
+        &:target {
+            display: flex;
+        }
     }
 
     #algebra-cal {
         &>div {
-            margin-top: 50px;
             display: grid;
             grid-template-columns: repeat(4, 110px);
             grid-template-rows: minmax(110px, auto) repeat(6, 110px);
 
             .output {
                 margin: 10px;
-                border: 3px solid $color-4;
                 border-radius: 20px;
                 padding: 20px;
                 grid-column: span 4;
@@ -68,7 +120,8 @@ main {
                 word-wrap: break-word;
                 word-break: break-all;
                 text-align: end;
-                background: $color-1;
+                color: $light-2;
+                background: $light-1;
 
                 #previous-operand {
                     min-height: 3rem;
@@ -89,59 +142,24 @@ main {
                 grid-row: span 2;
             }
 
-            .primary {
-                background: $color-4;
-            }
-
             button {
                 @include button;
-                font-weight: map-get($font-weight, L);
 
                 &:active {
-                    background: white;
+                    background: $mid-color;
                 }
             }
-        }
-    }
 
-    #base-converter,
-    #numeric-system-converter {
-        &>div {
-            margin-top: 50px;
-
-            form {
-                input {
-                    width: 400px;
-                    @include input;
-                }
-
-                select {
-                    margin: 10px;
-                    border: none;
-                    outline: none;
-                    background: rgba($color-3, 0.5);
-                    @include body;
-                }
-
-                button {
-                    @include button;
-                }
-
-            }
-
-            i {
-                margin: 20px;
-                width: 95%;
-                text-align: center;
-                animation: animate1 1s ease-in-out infinite;
+            .primary {
+                color: $dark-2;
+                background: $mid-color;
+                @include subtitle;
             }
         }
     }
 
     #tip-cal {
         &>div {
-            margin-top: 50px;
-
             h3 {
                 margin: 10px;
                 text-align: center;
@@ -159,8 +177,8 @@ main {
                     @include button;
                 }
 
-                .num-of-people {
-                    margin: 0 10px;
+                #people-input {
+                    display: inline;
                 }
             }
 
@@ -187,6 +205,41 @@ main {
             }
         }
     }
+
+    #base-converter,
+    #numeric-system-converter {
+        &>div {
+            form {
+                input {
+                    width: 500px;
+                    @include input;
+                    font-weight: map-get($font-weight, L);
+                }
+
+                select {
+                    margin: 10px;
+                    border: none;
+                    padding: 10px;
+                    outline: none;
+                    color: $dark-2;
+                    background: $mid-color;
+                    @include body;
+                }
+
+                button {
+                    @include button;
+                }
+
+            }
+
+            i {
+                margin: 20px;
+                width: 95%;
+                text-align: center;
+                animation: animate1 1s ease-in-out infinite;
+            }
+        }
+    }
 }
 
 footer {
@@ -194,6 +247,18 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    a {
+        margin: 10px;
+        border-radius: 50%;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        text-decoration: none;
+        color: $dark-1;
+        background-color: $light-1;
+    }
 }
 
 @keyframes animate1 {
