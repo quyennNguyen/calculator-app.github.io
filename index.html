@@ -1,39 +1,25 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YR CALC</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Calculator App</title>
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
 </head>
 
 <body>
-    <header>
-        <div id="top-head">
-            <h1>QQ</h1>
-            <a href="#menu-nav">Services</a>
-        </div>
-        <div id="banner">
-            <div id="intro">
-                <h2>Hi, I'm</h2>
-                <h1>YR CALC</h1>
-                <p>the one true calculator you need</p>
-            </div>
-            <img src="img/calculator.png" alt="">
-        </div>
-        <nav id="menu-nav">
-            <a href="#algebra-cal">Four-Function Calculator</a>
-            <a href="#tip-cal">Tip Calculator</a>
-            <a href="#base-converter">Bases-to-Base Converter</a>
-            <a href="#numeric-system-converter">Numeric System Converter</a>
-        </nav>
-    </header>
+    <nav id="menu-nav">
+        <button id="basic-cal-btn">Four-Function Calculator</button>
+        <button id="tip-cal-btn">Tip Calculator</button>
+        <button id="base-conv-btn">Bases-to-Base Converter</button>
+        <button id="num-conv-btn">Numeric System Converter</button>
+    </nav>
 
     <main>
-        <section class="calc" id="algebra-cal">
+        <section id="basic-cal">
+            <button id="basic-cal-close">X CLOSE</button>
             <div>
                 <div class="output" data-output>
                     <p id="previous-operand"></p>
@@ -60,13 +46,9 @@
             </div>
         </section>
 
-        <section class="calc" id="tip-cal">
+        <section id="tip-cal">
+            <button id="tip-cal-close">X CLOSE</button>
             <div>
-                <h3>
-                    <i class="fa-solid fa-utensils"></i>
-                    <i class="fa-solid fa-utensils"></i>
-                    <i class="fa-solid fa-utensils"></i>
-                </h3>
                 <form action="" onsubmit="return false">
                     <label for="total-input">Subtotal</label>
                     <br>
@@ -111,15 +93,11 @@
                 <div class="reset-btn">
                     <button type="reset" onclick="reset()">Reset</button>
                 </div>
-                <h3>
-                    <i class="fa-solid fa-barcode fa-2x"></i>
-                    <i class="fa-solid fa-barcode fa-2x"></i>
-                    <i class="fa-solid fa-barcode fa-2x"></i>
-                </h3>
             </div>
         </section>
 
-        <section class="calc" id="base-converter">
+        <section id="base-converter">
+            <button id="base-conv-close">X CLOSE</button>
             <div>
                 <form action="" onsubmit="return false">
                     <label for="input-base-num">FROM</label>
@@ -155,7 +133,8 @@
             </div>
         </section>
 
-        <section class="calc" id="numeric-system-converter">
+        <section id="numeric-system-converter">
+            <button id="num-conv-close">X CLOSE</button>
             <div>
                 <form action="" onsubmit="return false">
                     <label for="input-num">FROM</label>
@@ -180,16 +159,14 @@
 
     <footer>
         <p>&lt;&lt;&lt; &copy; 2022 Quyen Nguyen &gt;&gt;&gt;</p>
-        <a href="#">
-            <i class="fa-solid fa-house"></i>
-        </a>
     </footer>
 
     <script src="https://kit.fontawesome.com/d83c12719b.js" crossorigin="anonymous"></script>
-    <script src="algebraCal.js"></script>
-    <script src="baseConv.js"></script>
-    <script src="numericSystemConv.js"></script>
-    <script src="tipCal.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/basicCal.js"></script>
+    <script src="./js/tipCal.js"></script>
+    <script src="./js/baseConverter.js"></script>
+    <script src="./js/numConverter.js"></script>
 </body>
 
 </html>

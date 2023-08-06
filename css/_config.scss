@@ -23,8 +23,6 @@
     padding: 10px 15px;
     font-size: map-get($font-size, S);
     font-weight: map-get($font-weight, L);
-    color: $light-2;
-    background: $light-1;
     cursor: pointer;
 }
 
@@ -33,7 +31,6 @@
     border: none;
     border-radius: 20px;
     padding: 10px 15px;
-    color: $dark-2;
     background: $mid-color;
     outline: none;
     @include body;
